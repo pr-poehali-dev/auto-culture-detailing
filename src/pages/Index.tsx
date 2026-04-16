@@ -181,6 +181,14 @@ export default function Index() {
         <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
+              <div className="mb-6 animate-fade-in-up">
+                <img
+                  src="https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/bucket/90584169-8225-4146-9379-82ee6498a578.png"
+                  alt="Автокультура"
+                  className="h-20 w-auto object-contain"
+                  style={{ filter: "brightness(0) invert(1)" }}
+                />
+              </div>
               <div className="inline-flex items-center gap-2 border text-xs font-semibold px-3 py-1.5 rounded-full mb-6 animate-fade-in-up"
                 style={{ background: "rgba(224,58,47,0.2)", color: "#E03A2F", borderColor: "rgba(224,58,47,0.3)" }}>
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#E03A2F" }} />
@@ -611,20 +619,27 @@ export default function Index() {
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setBookingOpen(false)} />
           <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto animate-scale-in">
             <div className="sticky top-0 bg-white px-6 py-4 flex items-center justify-between rounded-t-2xl z-10" style={{ borderBottom: "1px solid #f1f5f9" }}>
-              <div>
-                <h3 className="font-display text-xl font-bold" style={{ color: "#1A1A1A" }}>Онлайн-запись</h3>
-                {!bookingDone && (
-                  <div className="flex items-center gap-1 mt-1">
-                    {[1, 2, 3].map(s => (
-                      <div key={s} className="h-1 rounded-full transition-all"
-                        style={{
-                          width: s === bookingStep ? "2rem" : "1rem",
-                          background: s <= bookingStep ? "#E03A2F" : "#e2e8f0"
-                        }} />
-                    ))}
-                    <span className="text-xs ml-2" style={{ color: "#94a3b8" }}>Шаг {bookingStep} из 3</span>
-                  </div>
-                )}
+              <div className="flex items-center gap-3">
+                <img
+                  src="https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/bucket/90584169-8225-4146-9379-82ee6498a578.png"
+                  alt="Автокультура"
+                  className="h-8 w-auto object-contain"
+                />
+                <div>
+                  <h3 className="font-display text-xl font-bold" style={{ color: "#1A1A1A" }}>Онлайн-запись</h3>
+                  {!bookingDone && (
+                    <div className="flex items-center gap-1 mt-1">
+                      {[1, 2, 3].map(s => (
+                        <div key={s} className="h-1 rounded-full transition-all"
+                          style={{
+                            width: s === bookingStep ? "2rem" : "1rem",
+                            background: s <= bookingStep ? "#E03A2F" : "#e2e8f0"
+                          }} />
+                      ))}
+                      <span className="text-xs ml-2" style={{ color: "#94a3b8" }}>Шаг {bookingStep} из 3</span>
+                    </div>
+                  )}
+                </div>
               </div>
               <button onClick={() => setBookingOpen(false)} className="p-2 rounded-lg transition-colors hover:bg-gray-100">
                 <Icon name="X" size={20} style={{ color: "#64748b" }} />
