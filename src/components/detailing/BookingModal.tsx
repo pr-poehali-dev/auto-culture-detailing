@@ -1,5 +1,8 @@
+import { useState } from "react";
 import Icon from "@/components/ui/icon";
 import { SERVICES, TIMES, DAY_NAMES, MONTH_NAMES, LOGO_URL } from "@/lib/detailing-data";
+
+const TG_URL = "https://functions.poehali.dev/271787e5-fcae-4b1f-9abd-a763fd8592b7";
 
 interface BookingModalProps {
   bookingOpen: boolean;
@@ -32,7 +35,34 @@ export default function BookingModal({
   phone, setPhone,
   dates,
 }: BookingModalProps) {
+  const [car, setCar] = useState("");
+  const [sending, setSending] = useState(false);
+
   if (!bookingOpen) return null;
+
+  const handleSubmit = async () => {
+    if (!name || !phone) return;
+    setSending(true);
+    try {
+      await fetch(TG_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "booking",
+          name,
+          phone,
+          service: selectedService,
+          date: selectedDate
+            ? new Date(selectedDate).toLocaleDateString("ru-RU", { day: "numeric", month: "long", weekday: "long" })
+            : "—",
+          time: selectedTime,
+          car: car || "—",
+        }),
+      });
+    } catch (e) { console.error(e); }
+    setSending(false);
+    setBookingDone(true);
+  };
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -174,7 +204,7 @@ export default function BookingModal({
                   style={{ border: "2px solid #e2e8f0" }}
                   onFocus={e => (e.target.style.borderColor = "#E03A2F")}
                   onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
-                <input type="text" placeholder="Марка и модель авто"
+                <input type="text" value={car} onChange={e => setCar(e.target.value)} placeholder="Марка и модель авто"
                   className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none bg-white"
                   style={{ border: "2px solid #e2e8f0" }}
                   onFocus={e => (e.target.style.borderColor = "#E03A2F")}
@@ -186,10 +216,10 @@ export default function BookingModal({
                   style={{ borderColor: "#e2e8f0", color: "#1A1A1A" }}>
                   ← Назад
                 </button>
-                <button onClick={() => { if (name && phone) { setBookingDone(true); } }} disabled={!name || !phone}
+                <button onClick={handleSubmit} disabled={!name || !phone || sending}
                   className="flex-1 py-3.5 rounded-xl font-semibold transition-all"
                   style={{ background: name && phone ? "#E03A2F" : "#e2e8f0", color: name && phone ? "white" : "#94a3b8", cursor: name && phone ? "pointer" : "not-allowed" }}>
-                  Записаться!
+                  {sending ? "Отправка..." : "Записаться!"}
                 </button>
               </div>
             </div>

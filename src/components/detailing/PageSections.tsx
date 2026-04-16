@@ -1,6 +1,6 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import Icon from "@/components/ui/icon";
-import { SERVICES, PORTFOLIO_ITEMS, STEPS, PROMOS, LOGO_URL } from "@/lib/detailing-data";
+import { SERVICES, PORTFOLIO_ITEMS, STEPS, PROMOS, LOGO_URL, PHONE, PHONE_HREF, ADDRESS, WORKING_HOURS, TG_PERSONAL, TG_GROUP } from "@/lib/detailing-data";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -25,8 +25,79 @@ function AnimSection({ children, className = "" }: { children: React.ReactNode; 
   );
 }
 
+const TG_URL = "https://functions.poehali.dev/271787e5-fcae-4b1f-9abd-a763fd8592b7";
+
 interface SectionsProps {
   onBooking: (service?: string) => void;
+}
+
+function QuickForm() {
+  const [qName, setQName] = useState("");
+  const [qPhone, setQPhone] = useState("");
+  const [qService, setQService] = useState("");
+  const [qComment, setQComment] = useState("");
+  const [qSending, setQSending] = useState(false);
+  const [qDone, setQDone] = useState(false);
+
+  const handleSend = useCallback(async () => {
+    if (!qName || !qPhone) return;
+    setQSending(true);
+    try {
+      await fetch(TG_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "quick", name: qName, phone: qPhone, service: qService || "—", comment: qComment || "—" }),
+      });
+    } catch (e) { console.error(e); }
+    setQSending(false);
+    setQDone(true);
+  }, [qName, qPhone, qService, qComment]);
+
+  if (qDone) {
+    return (
+      <div className="text-center py-8">
+        <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(224,58,47,0.1)" }}>
+          <Icon name="CheckCircle" size={32} style={{ color: "#E03A2F" }} />
+        </div>
+        <h4 className="font-display text-xl font-bold mb-2" style={{ color: "#1A1A1A" }}>Заявка отправлена!</h4>
+        <p className="text-sm" style={{ color: "#64748b" }}>Перезвоним вам в течение 15 минут</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      <input type="text" value={qName} onChange={e => setQName(e.target.value)} placeholder="Ваше имя *"
+        className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white"
+        style={{ border: "2px solid #e2e8f0" }}
+        onFocus={e => (e.target.style.borderColor = "#E03A2F")}
+        onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
+      <input type="tel" value={qPhone} onChange={e => setQPhone(e.target.value)} placeholder="+7 (___) ___-__-__ *"
+        className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white"
+        style={{ border: "2px solid #e2e8f0" }}
+        onFocus={e => (e.target.style.borderColor = "#E03A2F")}
+        onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
+      <select value={qService} onChange={e => setQService(e.target.value)}
+        className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white"
+        style={{ border: "2px solid #e2e8f0", color: qService ? "#1A1A1A" : "#94a3b8" }}>
+        <option value="">Выберите услугу</option>
+        {SERVICES.map(s => <option key={s.title} value={s.title} style={{ color: "#1A1A1A" }}>{s.title}</option>)}
+      </select>
+      <textarea value={qComment} onChange={e => setQComment(e.target.value)} placeholder="Комментарий (необязательно)" rows={3}
+        className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white resize-none"
+        style={{ border: "2px solid #e2e8f0" }}
+        onFocus={e => (e.target.style.borderColor = "#E03A2F")}
+        onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
+      <button onClick={handleSend} disabled={!qName || !qPhone || qSending}
+        className="w-full text-white font-semibold py-3.5 rounded-xl transition-all"
+        style={{ background: qName && qPhone ? "#E03A2F" : "#e2e8f0", color: qName && qPhone ? "white" : "#94a3b8", cursor: qName && qPhone ? "pointer" : "not-allowed" }}>
+        {qSending ? "Отправка..." : "Отправить заявку"}
+      </button>
+      <p className="text-xs text-center" style={{ color: "#94a3b8" }}>
+        Нажимая кнопку, вы соглашаетесь с политикой обработки данных
+      </p>
+    </div>
+  );
 }
 
 export default function PageSections({ onBooking }: SectionsProps) {
@@ -64,7 +135,7 @@ export default function PageSections({ onBooking }: SectionsProps) {
                 ЛУЧШЕГО
               </h1>
               <p className="text-lg font-light leading-relaxed mb-8 max-w-md animate-fade-in-up" style={{ color: "rgba(255,255,255,0.6)", animationDelay: "0.2s" }}>
-                Возвращаем автомобилю заводской вид. Профессиональная химия, современное оборудование, гарантия результата.
+                Возвращаем автомобилю первоначальный лоск. Профессиональный подход, современное оборудование и качественные материалы, гарантия результата.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
                 <button onClick={() => onBooking()}
@@ -142,22 +213,16 @@ export default function PageSections({ onBooking }: SectionsProps) {
                 <div className="rounded-3xl p-10 h-80 flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(13,148,136,0.08), rgba(249,115,22,0.04))" }}>
                   <div className="grid grid-cols-2 gap-4 w-full">
                     {[
-                      { icon: "Award", label: "7 лет опыта", color: "#E03A2F" },
-                      { icon: "Users", label: "15 мастеров", color: "#4A4A4A" },
-                      { icon: "MapPin", label: "2 студии", color: "#E03A2F" },
-                      { icon: "Wrench", label: "Проф. оборудование", color: "#4A4A4A" },
+                      { icon: "Award", label: "Опытные мастера", color: "#E03A2F" },
+                      { icon: "MapPin", label: "Студия в центре", color: "#4A4A4A" },
+                      { icon: "Wrench", label: "Проф. оборудование", color: "#E03A2F" },
+                      { icon: "ShieldCheck", label: "Гарантия на работы", color: "#4A4A4A" },
                     ].map(({ icon, label, color }) => (
                       <div key={label} className="bg-white rounded-2xl p-5 shadow-sm flex flex-col items-center gap-2 text-center">
                         <Icon name={icon} size={28} style={{ color }} />
                         <span className="text-sm font-semibold" style={{ color: "#1A1A1A" }}>{label}</span>
                       </div>
                     ))}
-                  </div>
-                </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl flex items-center justify-center shadow-xl" style={{ background: "#4A4A4A" }}>
-                  <div className="text-center text-white">
-                    <div className="font-display text-2xl font-bold">№1</div>
-                    <div className="text-[10px] font-medium opacity-90">в городе</div>
                   </div>
                 </div>
               </div>
@@ -168,18 +233,18 @@ export default function PageSections({ onBooking }: SectionsProps) {
                 О студии
               </div>
               <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: "#1A1A1A" }}>
-                МЫ ДЕЛАЕМ<br />
-                <span style={{ color: "#E03A2F" }}>БОЛЬШЕ,</span> ЧЕМ<br />
-                ПРОСТО МОЙКУ
+                ТВОЯ МАШИНА<br />
+                <span style={{ color: "#E03A2F" }}>МОЖЕТ БОЛЬШЕ.</span><br />
+                МЫ ПОКАЖЕМ.
               </h2>
               <p className="leading-relaxed mb-4" style={{ color: "#64748b" }}>
-                DetailPro — это профессиональная студия автодетейлинга с 7-летней историей. Мы работаем с автомобилями любого класса: от семейных седанов до суперкаров.
+                Автокультура — профессиональная студия детейлинга в Красноярске. Работаем с автомобилями любого класса: от городских машин до премиальных авто.
               </p>
               <p className="leading-relaxed mb-8" style={{ color: "#64748b" }}>
-                Используем только сертифицированную химию и материалы ведущих мировых брендов. Каждый мастер проходит ежегодную аттестацию.
+                Используем только сертифицированные профессиональные материалы ведущих мировых брендов. Каждый мастер проходит регулярную аттестацию.
               </p>
               <div className="flex flex-wrap gap-3">
-                {["Сертифицированные мастера", "Профи химия", "Гарантия на работы", "Фотоотчёт"].map(tag => (
+                {["Сертифицированные мастера", "Проф. материалы", "Гарантия на работы", "Фотоотчёт"].map(tag => (
                   <span key={tag} className="text-sm px-4 py-1.5 rounded-full font-medium" style={{ background: "#f1f5f9", color: "#475569" }}>
                     {tag}
                   </span>
@@ -371,10 +436,10 @@ export default function PageSections({ onBooking }: SectionsProps) {
 
               <div className="space-y-4">
                 {[
-                  { icon: "Phone", label: "Телефон", val: "+7 (900) 123-45-67", href: "tel:+79001234567" },
-                  { icon: "MessageCircle", label: "WhatsApp / Telegram", val: "@detailpro", href: "#" },
-                  { icon: "MapPin", label: "Адрес студии", val: "ул. Автомобильная, 15", href: "#" },
-                  { icon: "Clock", label: "Режим работы", val: "Ежедневно 8:00 — 21:00", href: null },
+                  { icon: "Phone", label: "Телефон", val: PHONE, href: PHONE_HREF },
+                  { icon: "Send", label: "Telegram (написать)", val: "@Artem_Autoculture", href: TG_PERSONAL },
+                  { icon: "MapPin", label: "Адрес студии", val: ADDRESS, href: "#" },
+                  { icon: "Clock", label: "Режим работы", val: WORKING_HOURS, href: null },
                 ].map(({ icon, label, val, href }) => (
                   <div key={label} className="flex items-center gap-4 p-4 rounded-xl transition-colors hover:bg-red-50" style={{ background: "#f8fafc" }}>
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(224,58,47,0.1)" }}>
@@ -397,35 +462,7 @@ export default function PageSections({ onBooking }: SectionsProps) {
               <div className="rounded-2xl p-8" style={{ background: "#f8fafc" }}>
                 <h3 className="font-display text-2xl font-bold mb-2" style={{ color: "#1A1A1A" }}>Быстрая заявка</h3>
                 <p className="text-sm mb-6" style={{ color: "#64748b" }}>Оставьте контакты — перезвоним в течение 15 минут</p>
-                <div className="space-y-4">
-                  <input type="text" placeholder="Ваше имя"
-                    className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white"
-                    style={{ border: "2px solid #e2e8f0" }}
-                    onFocus={e => (e.target.style.borderColor = "#E03A2F")}
-                    onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
-                  <input type="tel" placeholder="+7 (___) ___-__-__"
-                    className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white"
-                    style={{ border: "2px solid #e2e8f0" }}
-                    onFocus={e => (e.target.style.borderColor = "#E03A2F")}
-                    onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
-                  <select className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white"
-                    style={{ border: "2px solid #e2e8f0", color: "#94a3b8" }}>
-                    <option value="">Выберите услугу</option>
-                    {SERVICES.map(s => <option key={s.title} value={s.title} style={{ color: "#1A1A1A" }}>{s.title}</option>)}
-                  </select>
-                  <textarea placeholder="Комментарий (необязательно)" rows={3}
-                    className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white resize-none"
-                    style={{ border: "2px solid #e2e8f0" }}
-                    onFocus={e => (e.target.style.borderColor = "#E03A2F")}
-                    onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
-                  <button className="w-full text-white font-semibold py-3.5 rounded-xl transition-all"
-                    style={{ background: "#E03A2F" }}>
-                    Отправить заявку
-                  </button>
-                  <p className="text-xs text-center" style={{ color: "#94a3b8" }}>
-                    Нажимая кнопку, вы соглашаетесь с политикой обработки данных
-                  </p>
-                </div>
+                <QuickForm />
               </div>
             </AnimSection>
           </div>
@@ -460,9 +497,14 @@ export default function PageSections({ onBooking }: SectionsProps) {
             <div>
               <h4 className="font-display text-sm font-bold uppercase tracking-wider mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>Контакты</h4>
               <div className="space-y-2 text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
-                <div>+7 (900) 123-45-67</div>
-                <div>ул. Автомобильная, 15</div>
-                <div>Ежедневно 8:00 — 21:00</div>
+                <div>{PHONE}</div>
+                <div>{ADDRESS}</div>
+                <div>{WORKING_HOURS}</div>
+                <a href={TG_GROUP} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 hover:text-blue-400 transition-colors pt-1">
+                  <Icon name="Send" size={13} />
+                  Наш Telegram-канал
+                </a>
               </div>
             </div>
           </div>

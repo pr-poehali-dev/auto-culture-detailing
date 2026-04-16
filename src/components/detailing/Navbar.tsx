@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
-import { NAV_LINKS, LOGO_URL } from "@/lib/detailing-data";
+import { NAV_LINKS, LOGO_URL, PHONE, PHONE_HREF } from "@/lib/detailing-data";
 
 interface NavbarProps {
   onBooking: () => void;
@@ -39,11 +39,11 @@ export default function Navbar({ onBooking }: NavbarProps) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href="tel:+79001234567"
+          <a href={PHONE_HREF}
             className="hidden md:flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-red-600"
             style={{ color: scrolled ? "#1A1A1A" : "white" }}>
             <Icon name="Phone" size={15} />
-            +7 (900) 123-45-67
+            {PHONE}
           </a>
           <button onClick={onBooking}
             className="text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all hidden md:block"

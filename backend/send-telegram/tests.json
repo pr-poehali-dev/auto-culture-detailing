@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Missing bot config",
+      "method": "POST",
+      "path": "/",
+      "body": {"type": "quick", "name": "Тест", "phone": "+70000000000"},
+      "expectedStatus": 500,
+      "expectedBody": {"error": "bot not configured"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
