@@ -13,16 +13,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 20% 10%;
 
-    --primary: 175 72% 38%;
+    --primary: 3 72% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 95% 53%;
+    --secondary: 0 0% 30%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 10% 50%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 175 72% 38%;
+    --accent: 3 72% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,9 +34,9 @@
 
     --radius: 0.75rem;
 
-    --teal: 175 72% 38%;
-    --orange: 25 95% 53%;
-    --dark: 210 25% 8%;
+    --teal: 3 72% 53%;
+    --orange: 0 0% 30%;
+    --dark: 0 0% 10%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -77,31 +77,31 @@
   }
 
   .text-teal {
-    color: hsl(var(--teal));
+    color: #e03a2f;
   }
 
   .text-orange {
-    color: hsl(var(--orange));
+    color: #4a4a4a;
   }
 
   .bg-teal {
-    background-color: hsl(var(--teal));
+    background-color: #e03a2f;
   }
 
   .bg-orange {
-    background-color: hsl(var(--orange));
+    background-color: #4a4a4a;
   }
 
   .bg-dark {
-    background-color: hsl(var(--dark));
+    background-color: #1a1a1a;
   }
 
   .border-teal {
-    border-color: hsl(var(--teal));
+    border-color: #e03a2f;
   }
 
   .border-orange {
-    border-color: hsl(var(--orange));
+    border-color: #4a4a4a;
   }
 }
 

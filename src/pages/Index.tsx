@@ -21,10 +21,10 @@ const SERVICES = [
 ];
 
 const PORTFOLIO_ITEMS = [
-  { car: "BMW 5 Series", service: "Полировка + керамика", result: "−95% царапин", colorBefore: "#9ca3af", colorAfter: "#0d9488" },
-  { car: "Mercedes GLC", service: "PPF + тонировка", result: "Защита 5 лет", colorBefore: "#6b7280", colorAfter: "#f97316" },
-  { car: "Porsche Cayenne", service: "Комплексный детейлинг", result: "Как из салона", colorBefore: "#d1d5db", colorAfter: "#14b8a6" },
-  { car: "Toyota Camry", service: "Химчистка + озон", result: "Полное обновление", colorBefore: "#4b5563", colorAfter: "#fb923c" },
+  { car: "BMW 5 Series", service: "Полировка + керамика", result: "−95% царапин", colorBefore: "#9ca3af", colorAfter: "#E03A2F" },
+  { car: "Mercedes GLC", service: "PPF + тонировка", result: "Защита 5 лет", colorBefore: "#6b7280", colorAfter: "#4A4A4A" },
+  { car: "Porsche Cayenne", service: "Комплексный детейлинг", result: "Как из салона", colorBefore: "#d1d5db", colorAfter: "#E03A2F" },
+  { car: "Toyota Camry", service: "Химчистка + озон", result: "Полное обновление", colorBefore: "#4b5563", colorAfter: "#4A4A4A" },
 ];
 
 const STEPS = [
@@ -35,9 +35,9 @@ const STEPS = [
 ];
 
 const PROMOS = [
-  { badge: "−20%", title: "Первый визит", desc: "Скидка 20% на любую услугу для новых клиентов. Действует до конца месяца.", bg: "#0d9488" },
-  { badge: "2+1", title: "Комплекс выгоды", desc: "При заказе мойки + полировки химчистка салона в подарок.", bg: "#f97316" },
-  { badge: "VIP", title: "Абонемент", desc: "8 ручных моек по цене 6. Закрепляем персонального мастера.", bg: "#0f172a" },
+  { badge: "−20%", title: "Первый визит", desc: "Скидка 20% на любую услугу для новых клиентов. Действует до конца месяца.", bg: "#E03A2F" },
+  { badge: "2+1", title: "Комплекс выгоды", desc: "При заказе мойки + полировки химчистка салона в подарок.", bg: "#4A4A4A" },
+  { badge: "VIP", title: "Абонемент", desc: "8 ручных моек по цене 6. Закрепляем персонального мастера.", bg: "#1A1A1A" },
 ];
 
 const TIMES = ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00"];
@@ -110,19 +110,19 @@ export default function Index() {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"}`}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-md flex items-center justify-center" style={{ background: "#0d9488" }}>
+            <div className="w-8 h-8 rounded-md flex items-center justify-center" style={{ background: "#E03A2F" }}>
               <Icon name="Car" size={18} className="text-white" />
             </div>
-            <span className="font-display text-xl font-bold tracking-wide" style={{ color: "#0f172a" }}>
-              АВТО<span style={{ color: "#0d9488" }}>КУЛЬТУРА</span>
+            <span className="font-display text-xl font-bold tracking-wide" style={{ color: "#1A1A1A" }}>
+              АВТО<span style={{ color: "#E03A2F" }}>КУЛЬТУРА</span>
             </span>
           </a>
 
           <nav className="hidden lg:flex items-center gap-6">
             {NAV_LINKS.map(l => (
               <a key={l.href} href={l.href}
-                className="text-sm font-medium transition-colors hover:text-teal-600"
-                style={{ color: scrolled ? "rgba(15,23,42,0.7)" : "rgba(255,255,255,0.8)" }}>
+                className="text-sm font-medium transition-colors hover:text-red-600"
+                style={{ color: scrolled ? "rgba(26,26,26,0.7)" : "rgba(255,255,255,0.8)" }}>
                 {l.label}
               </a>
             ))}
@@ -130,19 +130,19 @@ export default function Index() {
 
           <div className="flex items-center gap-3">
             <a href="tel:+79001234567"
-              className="hidden md:flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-teal-600"
-              style={{ color: scrolled ? "#0f172a" : "white" }}>
+              className="hidden md:flex items-center gap-1.5 text-sm font-semibold transition-colors hover:text-red-600"
+              style={{ color: scrolled ? "#1A1A1A" : "white" }}>
               <Icon name="Phone" size={15} />
               +7 (900) 123-45-67
             </a>
             <button onClick={() => openBooking()}
               className="text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all hidden md:block"
-              style={{ background: "#0d9488" }}>
+              style={{ background: "#E03A2F" }}>
               Записаться
             </button>
             <button onClick={() => setMenuOpen(!menuOpen)}
               className="lg:hidden p-2"
-              style={{ color: scrolled ? "#0f172a" : "white" }}>
+              style={{ color: scrolled ? "#1A1A1A" : "white" }}>
               <Icon name={menuOpen ? "X" : "Menu"} size={22} />
             </button>
           </div>
@@ -160,7 +160,7 @@ export default function Index() {
               ))}
               <button onClick={() => { openBooking(); setMenuOpen(false); }}
                 className="mt-2 text-white font-semibold py-3 rounded-lg"
-                style={{ background: "#0d9488" }}>
+                style={{ background: "#E03A2F" }}>
                 Записаться онлайн
               </button>
             </div>
@@ -169,11 +169,11 @@ export default function Index() {
       </header>
 
       {/* HERO */}
-      <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#0f172a" }}>
+      <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#1A1A1A" }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full blur-3xl animate-float" style={{ background: "rgba(13,148,136,0.2)" }} />
-          <div className="absolute bottom-0 -left-32 w-80 h-80 rounded-full blur-3xl animate-float" style={{ background: "rgba(249,115,22,0.15)", animationDelay: "0.7s" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl" style={{ background: "rgba(13,148,136,0.05)" }} />
+          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full blur-3xl animate-float" style={{ background: "rgba(224,58,47,0.2)" }} />
+          <div className="absolute bottom-0 -left-32 w-80 h-80 rounded-full blur-3xl animate-float" style={{ background: "rgba(74,74,74,0.25)", animationDelay: "0.7s" }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl" style={{ background: "rgba(224,58,47,0.05)" }} />
           <div className="absolute inset-0 opacity-5"
             style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
         </div>
@@ -182,13 +182,13 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 border text-xs font-semibold px-3 py-1.5 rounded-full mb-6 animate-fade-in-up"
-                style={{ background: "rgba(13,148,136,0.2)", color: "#2dd4bf", borderColor: "rgba(13,148,136,0.3)" }}>
-                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#2dd4bf" }} />
+                style={{ background: "rgba(224,58,47,0.2)", color: "#E03A2F", borderColor: "rgba(224,58,47,0.3)" }}>
+                <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#E03A2F" }} />
                 Профессиональный детейлинг
               </div>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
                 БЛЕСК<br />
-                <span style={{ color: "#2dd4bf" }}>ВАШЕГО</span><br />
+                <span style={{ color: "#E03A2F" }}>ВАШЕГО</span><br />
                 АВТО
               </h1>
               <p className="text-lg font-light leading-relaxed mb-8 max-w-md animate-fade-in-up" style={{ color: "rgba(255,255,255,0.6)", animationDelay: "0.2s" }}>
@@ -197,7 +197,7 @@ export default function Index() {
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
                 <button onClick={() => openBooking()}
                   className="text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-base"
-                  style={{ background: "#0d9488" }}>
+                  style={{ background: "#E03A2F" }}>
                   <Icon name="Calendar" size={18} />
                   Записаться онлайн
                 </button>
@@ -212,7 +212,7 @@ export default function Index() {
               <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t animate-fade-in-up" style={{ borderColor: "rgba(255,255,255,0.1)", animationDelay: "0.4s" }}>
                 {[["500+", "Довольных клиентов"], ["7 лет", "На рынке"], ["100%", "Гарантия"]].map(([n, l]) => (
                   <div key={n}>
-                    <div className="font-display text-3xl font-bold mb-1" style={{ color: "#2dd4bf" }}>{n}</div>
+                    <div className="font-display text-3xl font-bold mb-1" style={{ color: "#E03A2F" }}>{n}</div>
                     <div className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.5)" }}>{l}</div>
                   </div>
                 ))}
@@ -222,33 +222,33 @@ export default function Index() {
             <div className="relative hidden lg:flex items-center justify-center animate-scale-in" style={{ animationDelay: "0.3s" }}>
               <div className="relative w-full max-w-lg">
                 <div className="w-full h-80 rounded-3xl border flex items-center justify-center overflow-hidden"
-                  style={{ background: "linear-gradient(135deg, rgba(13,148,136,0.3), rgba(13,148,136,0.05))", borderColor: "rgba(13,148,136,0.2)" }}>
+                  style={{ background: "linear-gradient(135deg, rgba(224,58,47,0.3), rgba(224,58,47,0.05))", borderColor: "rgba(224,58,47,0.2)" }}>
                   <div className="text-center">
                     <div className="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"
-                      style={{ background: "rgba(13,148,136,0.2)" }}>
-                      <Icon name="Car" size={64} className="text-teal-400" />
+                      style={{ background: "rgba(224,58,47,0.2)" }}>
+                      <Icon name="Car" size={64} style={{ color: "#E03A2F" }} />
                     </div>
                     <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>Портфолио работ</p>
                   </div>
                 </div>
 
                 <div className="absolute -top-4 -right-4 bg-white rounded-xl p-3 shadow-2xl flex items-center gap-2 animate-float" style={{ animationDelay: "0.2s" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(249,115,22,0.1)" }}>
-                    <Icon name="Star" size={16} style={{ color: "#f97316" }} />
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(74,74,74,0.1)" }}>
+                    <Icon name="Star" size={16} style={{ color: "#4A4A4A" }} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold" style={{ color: "#0f172a" }}>4.9 / 5.0</div>
+                    <div className="text-xs font-bold" style={{ color: "#1A1A1A" }}>4.9 / 5.0</div>
                     <div className="text-[10px]" style={{ color: "#64748b" }}>500+ отзывов</div>
                   </div>
                 </div>
 
                 <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-3 shadow-2xl animate-float" style={{ animationDelay: "0.5s" }}>
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(13,148,136,0.1)" }}>
-                      <Icon name="CheckCircle" size={16} style={{ color: "#0d9488" }} />
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(224,58,47,0.1)" }}>
+                      <Icon name="CheckCircle" size={16} style={{ color: "#E03A2F" }} />
                     </div>
                     <div>
-                      <div className="text-xs font-bold" style={{ color: "#0f172a" }}>Готово!</div>
+                      <div className="text-xs font-bold" style={{ color: "#1A1A1A" }}>Готово!</div>
                       <div className="text-[10px]" style={{ color: "#64748b" }}>BMW 5 Series</div>
                     </div>
                   </div>
@@ -270,19 +270,19 @@ export default function Index() {
                 <div className="rounded-3xl p-10 h-80 flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(13,148,136,0.08), rgba(249,115,22,0.04))" }}>
                   <div className="grid grid-cols-2 gap-4 w-full">
                     {[
-                      { icon: "Award", label: "7 лет опыта", color: "#0d9488" },
-                      { icon: "Users", label: "15 мастеров", color: "#f97316" },
-                      { icon: "MapPin", label: "2 студии", color: "#0d9488" },
-                      { icon: "Wrench", label: "Проф. оборудование", color: "#f97316" },
+                      { icon: "Award", label: "7 лет опыта", color: "#E03A2F" },
+                      { icon: "Users", label: "15 мастеров", color: "#4A4A4A" },
+                      { icon: "MapPin", label: "2 студии", color: "#E03A2F" },
+                      { icon: "Wrench", label: "Проф. оборудование", color: "#4A4A4A" },
                     ].map(({ icon, label, color }) => (
                       <div key={label} className="bg-white rounded-2xl p-5 shadow-sm flex flex-col items-center gap-2 text-center">
                         <Icon name={icon} size={28} style={{ color }} />
-                        <span className="text-sm font-semibold" style={{ color: "#0f172a" }}>{label}</span>
+                        <span className="text-sm font-semibold" style={{ color: "#1A1A1A" }}>{label}</span>
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl flex items-center justify-center shadow-xl" style={{ background: "#f97316" }}>
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl flex items-center justify-center shadow-xl" style={{ background: "#4A4A4A" }}>
                   <div className="text-center text-white">
                     <div className="font-display text-2xl font-bold">№1</div>
                     <div className="text-[10px] font-medium opacity-90">в городе</div>
@@ -292,12 +292,12 @@ export default function Index() {
             </AnimSection>
 
             <AnimSection>
-              <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.1)", color: "#0d9488" }}>
+              <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(224,58,47,0.1)", color: "#E03A2F" }}>
                 О студии
               </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: "#0f172a" }}>
+              <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: "#1A1A1A" }}>
                 МЫ ДЕЛАЕМ<br />
-                <span style={{ color: "#0d9488" }}>БОЛЬШЕ,</span> ЧЕМ<br />
+                <span style={{ color: "#E03A2F" }}>БОЛЬШЕ,</span> ЧЕМ<br />
                 ПРОСТО МОЙКУ
               </h2>
               <p className="leading-relaxed mb-4" style={{ color: "#64748b" }}>
@@ -322,11 +322,11 @@ export default function Index() {
       <section id="services" className="py-24" style={{ background: "#f8fafc" }}>
         <div className="container mx-auto px-4">
           <AnimSection className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.1)", color: "#0d9488" }}>
+            <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(224,58,47,0.1)", color: "#E03A2F" }}>
               Услуги
             </div>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4" style={{ color: "#0f172a" }}>
-              ЧТО МЫ <span style={{ color: "#0d9488" }}>ПРЕДЛАГАЕМ</span>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4" style={{ color: "#1A1A1A" }}>
+              ЧТО МЫ <span style={{ color: "#E03A2F" }}>ПРЕДЛАГАЕМ</span>
             </h2>
             <p style={{ color: "#64748b" }} className="max-w-xl mx-auto">
               Полный спектр услуг для защиты и восстановления вашего автомобиля
@@ -339,22 +339,22 @@ export default function Index() {
                 <div className="bg-white rounded-2xl p-6 shadow-sm border card-hover h-full flex flex-col relative overflow-hidden" style={{ borderColor: "#f1f5f9" }}>
                   {s.tag && (
                     <span className="absolute top-4 right-4 text-xs font-bold px-2.5 py-1 rounded-full text-white"
-                      style={{ background: (s.tag === "Хит" || s.tag === "VIP") ? "#f97316" : "#0d9488" }}>
+                      style={{ background: (s.tag === "Хит" || s.tag === "VIP") ? "#4A4A4A" : "#E03A2F" }}>
                       {s.tag}
                     </span>
                   )}
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(13,148,136,0.1)" }}>
-                    <Icon name={s.icon} size={24} style={{ color: "#0d9488" }} />
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(224,58,47,0.1)" }}>
+                    <Icon name={s.icon} size={24} style={{ color: "#E03A2F" }} />
                   </div>
-                  <h3 className="font-display text-xl font-bold mb-2" style={{ color: "#0f172a" }}>{s.title}</h3>
+                  <h3 className="font-display text-xl font-bold mb-2" style={{ color: "#1A1A1A" }}>{s.title}</h3>
                   <p className="text-sm leading-relaxed flex-1 mb-4" style={{ color: "#64748b" }}>{s.desc}</p>
                   <div className="flex items-center justify-between mt-auto pt-4 border-t" style={{ borderColor: "#f8fafc" }}>
-                    <span className="font-display text-lg font-bold" style={{ color: "#0d9488" }}>{s.price}</span>
+                    <span className="font-display text-lg font-bold" style={{ color: "#E03A2F" }}>{s.price}</span>
                     <button onClick={() => openBooking(s.title)}
                       className="text-sm font-semibold px-4 py-2 rounded-lg border transition-all hover:text-white"
-                      style={{ color: "#0d9488", borderColor: "#0d9488" }}
-                      onMouseOver={e => { (e.target as HTMLElement).style.background = "#0d9488"; (e.target as HTMLElement).style.color = "white"; }}
-                      onMouseOut={e => { (e.target as HTMLElement).style.background = "transparent"; (e.target as HTMLElement).style.color = "#0d9488"; }}>
+                      style={{ color: "#E03A2F", borderColor: "#E03A2F" }}
+                      onMouseOver={e => { (e.target as HTMLElement).style.background = "#E03A2F"; (e.target as HTMLElement).style.color = "white"; }}
+                      onMouseOut={e => { (e.target as HTMLElement).style.background = "transparent"; (e.target as HTMLElement).style.color = "#E03A2F"; }}>
                       Записаться
                     </button>
                   </div>
@@ -369,11 +369,11 @@ export default function Index() {
       <section id="portfolio" className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <AnimSection className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(249,115,22,0.1)", color: "#f97316" }}>
+            <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(74,74,74,0.1)", color: "#4A4A4A" }}>
               Портфолио
             </div>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4" style={{ color: "#0f172a" }}>
-              НАШИ <span style={{ color: "#f97316" }}>РАБОТЫ</span>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4" style={{ color: "#1A1A1A" }}>
+              НАШИ <span style={{ color: "#4A4A4A" }}>РАБОТЫ</span>
             </h2>
             <p style={{ color: "#64748b" }} className="max-w-xl mx-auto">До и после — наглядные результаты нашей работы</p>
           </AnimSection>
@@ -388,17 +388,17 @@ export default function Index() {
                       <Icon name="Car" size={48} style={{ color: "rgba(255,255,255,0.4)" }} />
                     </div>
                     <div className="flex items-center justify-center relative" style={{ background: item.colorAfter }}>
-                      <div className="absolute top-3 right-3 text-xs px-2 py-1 rounded font-semibold" style={{ background: "rgba(255,255,255,0.9)", color: "#0f172a" }}>После</div>
+                      <div className="absolute top-3 right-3 text-xs px-2 py-1 rounded font-semibold" style={{ background: "rgba(255,255,255,0.9)", color: "#1A1A1A" }}>После</div>
                       <Icon name="Sparkles" size={48} style={{ color: "rgba(255,255,255,0.6)" }} />
                     </div>
                   </div>
                   <div className="p-5 bg-white">
                     <div className="flex items-center justify-between">
                       <div>
-                        <h4 className="font-display text-lg font-bold" style={{ color: "#0f172a" }}>{item.car}</h4>
+                        <h4 className="font-display text-lg font-bold" style={{ color: "#1A1A1A" }}>{item.car}</h4>
                         <p className="text-sm" style={{ color: "#64748b" }}>{item.service}</p>
                       </div>
-                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full" style={{ background: "rgba(13,148,136,0.1)", color: "#0d9488" }}>
+                      <span className="text-xs font-semibold px-3 py-1.5 rounded-full" style={{ background: "rgba(224,58,47,0.1)", color: "#E03A2F" }}>
                         {item.result}
                       </span>
                     </div>
@@ -411,10 +411,10 @@ export default function Index() {
       </section>
 
       {/* PROCESS */}
-      <section id="process" className="py-24 relative overflow-hidden" style={{ background: "#0f172a" }}>
+      <section id="process" className="py-24 relative overflow-hidden" style={{ background: "#1A1A1A" }}>
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl" style={{ background: "rgba(13,148,136,0.1)" }} />
-          <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-3xl" style={{ background: "rgba(249,115,22,0.1)" }} />
+          <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl" style={{ background: "rgba(224,58,47,0.1)" }} />
+          <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full blur-3xl" style={{ background: "rgba(74,74,74,0.1)" }} />
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <AnimSection className="text-center mb-14">
@@ -423,7 +423,7 @@ export default function Index() {
             </div>
             <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4">
               4 ШАГА ДО<br />
-              <span style={{ color: "#2dd4bf" }}>ИДЕАЛЬНОГО АВТО</span>
+              <span style={{ color: "#E03A2F" }}>ИДЕАЛЬНОГО АВТО</span>
             </h2>
           </AnimSection>
 
@@ -431,9 +431,9 @@ export default function Index() {
             {STEPS.map((step) => (
               <AnimSection key={step.num}>
                 <div className="rounded-2xl p-6 hover:bg-white/10 transition-all" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                  <div className="font-display text-5xl font-bold mb-3 leading-none" style={{ color: "rgba(13,148,136,0.2)" }}>{step.num}</div>
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(13,148,136,0.2)" }}>
-                    <Icon name={step.icon} size={20} style={{ color: "#2dd4bf" }} />
+                  <div className="font-display text-5xl font-bold mb-3 leading-none" style={{ color: "rgba(224,58,47,0.2)" }}>{step.num}</div>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(224,58,47,0.2)" }}>
+                    <Icon name={step.icon} size={20} style={{ color: "#E03A2F" }} />
                   </div>
                   <h3 className="font-display text-lg font-bold text-white mb-2">{step.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>{step.desc}</p>
@@ -445,7 +445,7 @@ export default function Index() {
           <AnimSection className="text-center mt-12">
             <button onClick={() => openBooking()}
               className="text-white font-semibold px-10 py-4 rounded-xl transition-all inline-flex items-center gap-2 text-base"
-              style={{ background: "#0d9488" }}>
+              style={{ background: "#E03A2F" }}>
               <Icon name="Calendar" size={18} />
               Записаться прямо сейчас
             </button>
@@ -457,11 +457,11 @@ export default function Index() {
       <section id="promo" className="py-24" style={{ background: "#f8fafc" }}>
         <div className="container mx-auto px-4">
           <AnimSection className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(249,115,22,0.1)", color: "#f97316" }}>
+            <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(74,74,74,0.1)", color: "#4A4A4A" }}>
               Акции
             </div>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4" style={{ color: "#0f172a" }}>
-              СПЕЦИАЛЬНЫЕ <span style={{ color: "#f97316" }}>ПРЕДЛОЖЕНИЯ</span>
+            <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4" style={{ color: "#1A1A1A" }}>
+              СПЕЦИАЛЬНЫЕ <span style={{ color: "#4A4A4A" }}>ПРЕДЛОЖЕНИЯ</span>
             </h2>
           </AnimSection>
 
@@ -489,12 +489,12 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
             <AnimSection>
-              <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(13,148,136,0.1)", color: "#0d9488" }}>
+              <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(224,58,47,0.1)", color: "#E03A2F" }}>
                 Контакты
               </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight mb-8" style={{ color: "#0f172a" }}>
+              <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight mb-8" style={{ color: "#1A1A1A" }}>
                 ГОТОВЫ ВАС<br />
-                <span style={{ color: "#0d9488" }}>ПРИНЯТЬ</span>
+                <span style={{ color: "#E03A2F" }}>ПРИНЯТЬ</span>
               </h2>
 
               <div className="space-y-4">
@@ -504,16 +504,16 @@ export default function Index() {
                   { icon: "MapPin", label: "Адрес студии", val: "ул. Автомобильная, 15", href: "#" },
                   { icon: "Clock", label: "Режим работы", val: "Ежедневно 8:00 — 21:00", href: null },
                 ].map(({ icon, label, val, href }) => (
-                  <div key={label} className="flex items-center gap-4 p-4 rounded-xl transition-colors hover:bg-teal-50" style={{ background: "#f8fafc" }}>
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(13,148,136,0.1)" }}>
-                      <Icon name={icon} size={18} style={{ color: "#0d9488" }} />
+                  <div key={label} className="flex items-center gap-4 p-4 rounded-xl transition-colors hover:bg-red-50" style={{ background: "#f8fafc" }}>
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: "rgba(224,58,47,0.1)" }}>
+                      <Icon name={icon} size={18} style={{ color: "#E03A2F" }} />
                     </div>
                     <div>
                       <div className="text-xs font-medium" style={{ color: "#94a3b8" }}>{label}</div>
                       {href ? (
-                        <a href={href} className="font-semibold hover:text-teal-600 transition-colors" style={{ color: "#0f172a" }}>{val}</a>
+                        <a href={href} className="font-semibold hover:text-red-600 transition-colors" style={{ color: "#1A1A1A" }}>{val}</a>
                       ) : (
-                        <div className="font-semibold" style={{ color: "#0f172a" }}>{val}</div>
+                        <div className="font-semibold" style={{ color: "#1A1A1A" }}>{val}</div>
                       )}
                     </div>
                   </div>
@@ -523,31 +523,31 @@ export default function Index() {
 
             <AnimSection>
               <div className="rounded-2xl p-8" style={{ background: "#f8fafc" }}>
-                <h3 className="font-display text-2xl font-bold mb-2" style={{ color: "#0f172a" }}>Быстрая заявка</h3>
+                <h3 className="font-display text-2xl font-bold mb-2" style={{ color: "#1A1A1A" }}>Быстрая заявка</h3>
                 <p className="text-sm mb-6" style={{ color: "#64748b" }}>Оставьте контакты — перезвоним в течение 15 минут</p>
                 <div className="space-y-4">
                   <input type="text" placeholder="Ваше имя"
                     className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white"
                     style={{ border: "2px solid #e2e8f0" }}
-                    onFocus={e => (e.target.style.borderColor = "#0d9488")}
+                    onFocus={e => (e.target.style.borderColor = "#E03A2F")}
                     onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
                   <input type="tel" placeholder="+7 (___) ___-__-__"
                     className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white"
                     style={{ border: "2px solid #e2e8f0" }}
-                    onFocus={e => (e.target.style.borderColor = "#0d9488")}
+                    onFocus={e => (e.target.style.borderColor = "#E03A2F")}
                     onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
                   <select className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white"
                     style={{ border: "2px solid #e2e8f0", color: "#94a3b8" }}>
                     <option value="">Выберите услугу</option>
-                    {SERVICES.map(s => <option key={s.title} value={s.title} style={{ color: "#0f172a" }}>{s.title}</option>)}
+                    {SERVICES.map(s => <option key={s.title} value={s.title} style={{ color: "#1A1A1A" }}>{s.title}</option>)}
                   </select>
                   <textarea placeholder="Комментарий (необязательно)" rows={3}
                     className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors bg-white resize-none"
                     style={{ border: "2px solid #e2e8f0" }}
-                    onFocus={e => (e.target.style.borderColor = "#0d9488")}
+                    onFocus={e => (e.target.style.borderColor = "#E03A2F")}
                     onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
                   <button className="w-full text-white font-semibold py-3.5 rounded-xl transition-all"
-                    style={{ background: "#0d9488" }}>
+                    style={{ background: "#E03A2F" }}>
                     Отправить заявку
                   </button>
                   <p className="text-xs text-center" style={{ color: "#94a3b8" }}>
@@ -561,15 +561,15 @@ export default function Index() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-12 text-white" style={{ background: "#0f172a" }}>
+      <footer className="py-12 text-white" style={{ background: "#1A1A1A" }}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-md flex items-center justify-center" style={{ background: "#0d9488" }}>
+                <div className="w-8 h-8 rounded-md flex items-center justify-center" style={{ background: "#E03A2F" }}>
                   <Icon name="Car" size={18} className="text-white" />
                 </div>
-                <span className="font-display text-xl font-bold">АВТО<span style={{ color: "#2dd4bf" }}>КУЛЬТУРА</span></span>
+                <span className="font-display text-xl font-bold">АВТО<span style={{ color: "#E03A2F" }}>КУЛЬТУРА</span></span>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
                 Профессиональный автодетейлинг. Возвращаем автомобилю заводской блеск.
@@ -579,7 +579,7 @@ export default function Index() {
               <h4 className="font-display text-sm font-bold uppercase tracking-wider mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>Услуги</h4>
               <div className="space-y-2">
                 {SERVICES.slice(0, 4).map(s => (
-                  <div key={s.title} className="text-sm cursor-pointer transition-colors hover:text-teal-400" style={{ color: "rgba(255,255,255,0.5)" }}>{s.title}</div>
+                  <div key={s.title} className="text-sm cursor-pointer transition-colors hover:text-red-400" style={{ color: "rgba(255,255,255,0.5)" }}>{s.title}</div>
                 ))}
               </div>
             </div>
@@ -596,7 +596,7 @@ export default function Index() {
             <p className="text-sm" style={{ color: "rgba(255,255,255,0.3)" }}>© 2024 Автокультура. Все права защищены.</p>
             <button onClick={() => openBooking()}
               className="text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-all"
-              style={{ background: "#0d9488" }}>
+              style={{ background: "#E03A2F" }}>
               Записаться онлайн
             </button>
           </div>
@@ -610,14 +610,14 @@ export default function Index() {
           <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto animate-scale-in">
             <div className="sticky top-0 bg-white px-6 py-4 flex items-center justify-between rounded-t-2xl z-10" style={{ borderBottom: "1px solid #f1f5f9" }}>
               <div>
-                <h3 className="font-display text-xl font-bold" style={{ color: "#0f172a" }}>Онлайн-запись</h3>
+                <h3 className="font-display text-xl font-bold" style={{ color: "#1A1A1A" }}>Онлайн-запись</h3>
                 {!bookingDone && (
                   <div className="flex items-center gap-1 mt-1">
                     {[1, 2, 3].map(s => (
                       <div key={s} className="h-1 rounded-full transition-all"
                         style={{
                           width: s === bookingStep ? "2rem" : "1rem",
-                          background: s <= bookingStep ? "#0d9488" : "#e2e8f0"
+                          background: s <= bookingStep ? "#E03A2F" : "#e2e8f0"
                         }} />
                     ))}
                     <span className="text-xs ml-2" style={{ color: "#94a3b8" }}>Шаг {bookingStep} из 3</span>
@@ -632,10 +632,10 @@ export default function Index() {
             <div className="p-6">
               {bookingDone ? (
                 <div className="text-center py-8">
-                  <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(13,148,136,0.1)" }}>
-                    <Icon name="CheckCircle" size={40} style={{ color: "#0d9488" }} />
+                  <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(224,58,47,0.1)" }}>
+                    <Icon name="CheckCircle" size={40} style={{ color: "#E03A2F" }} />
                   </div>
-                  <h4 className="font-display text-2xl font-bold mb-2" style={{ color: "#0f172a" }}>Запись создана!</h4>
+                  <h4 className="font-display text-2xl font-bold mb-2" style={{ color: "#1A1A1A" }}>Запись создана!</h4>
                   <p className="mb-1" style={{ color: "#64748b" }}><strong>{selectedService}</strong></p>
                   <p className="text-sm mb-1" style={{ color: "#64748b" }}>
                     {selectedDate && new Date(selectedDate).toLocaleDateString("ru-RU", { day: "numeric", month: "long" })} в {selectedTime}
@@ -643,7 +643,7 @@ export default function Index() {
                   <p className="text-sm mb-6" style={{ color: "#64748b" }}>Мы позвоним вам для подтверждения</p>
                   <button onClick={() => setBookingOpen(false)}
                     className="text-white font-semibold px-8 py-3 rounded-xl transition-all"
-                    style={{ background: "#0d9488" }}>
+                    style={{ background: "#E03A2F" }}>
                     Отлично!
                   </button>
                 </div>
@@ -654,24 +654,24 @@ export default function Index() {
                     {SERVICES.map(s => (
                       <button key={s.title} onClick={() => setSelectedService(s.title)}
                         className="w-full flex items-center justify-between p-4 rounded-xl border-2 transition-all text-left"
-                        style={{ borderColor: selectedService === s.title ? "#0d9488" : "#f1f5f9", background: selectedService === s.title ? "rgba(13,148,136,0.04)" : "white" }}>
+                        style={{ borderColor: selectedService === s.title ? "#E03A2F" : "#f1f5f9", background: selectedService === s.title ? "rgba(13,148,136,0.04)" : "white" }}>
                         <div className="flex items-center gap-3">
                           <div className="w-9 h-9 rounded-lg flex items-center justify-center"
-                            style={{ background: selectedService === s.title ? "#0d9488" : "#f1f5f9" }}>
+                            style={{ background: selectedService === s.title ? "#E03A2F" : "#f1f5f9" }}>
                             <Icon name={s.icon} size={16} style={{ color: selectedService === s.title ? "white" : "#64748b" }} />
                           </div>
                           <div>
-                            <div className="font-semibold text-sm" style={{ color: "#0f172a" }}>{s.title}</div>
+                            <div className="font-semibold text-sm" style={{ color: "#1A1A1A" }}>{s.title}</div>
                             <div className="text-xs" style={{ color: "#94a3b8" }}>{s.price}</div>
                           </div>
                         </div>
-                        {selectedService === s.title && <Icon name="Check" size={18} style={{ color: "#0d9488" }} />}
+                        {selectedService === s.title && <Icon name="Check" size={18} style={{ color: "#E03A2F" }} />}
                       </button>
                     ))}
                   </div>
                   <button onClick={() => selectedService && setBookingStep(2)} disabled={!selectedService}
                     className="w-full mt-5 py-3.5 rounded-xl font-semibold transition-all text-white"
-                    style={{ background: selectedService ? "#0d9488" : "#e2e8f0", color: selectedService ? "white" : "#94a3b8", cursor: selectedService ? "pointer" : "not-allowed" }}>
+                    style={{ background: selectedService ? "#E03A2F" : "#e2e8f0", color: selectedService ? "white" : "#94a3b8", cursor: selectedService ? "pointer" : "not-allowed" }}>
                     Далее →
                   </button>
                 </div>
@@ -686,7 +686,7 @@ export default function Index() {
                       return (
                         <button key={iso} onClick={() => setSelectedDate(iso)}
                           className="flex-shrink-0 flex flex-col items-center p-3 rounded-xl border-2 min-w-[60px] transition-all"
-                          style={{ borderColor: isSelected ? "#0d9488" : "#f1f5f9", background: isSelected ? "#0d9488" : "white", color: isSelected ? "white" : "#0f172a" }}>
+                          style={{ borderColor: isSelected ? "#E03A2F" : "#f1f5f9", background: isSelected ? "#E03A2F" : "white", color: isSelected ? "white" : "#1A1A1A" }}>
                           <span className="text-[10px] font-medium uppercase">{DAY_NAMES[d.getDay()]}</span>
                           <span className="font-display text-lg font-bold leading-none my-0.5">{d.getDate()}</span>
                           <span className="text-[10px]">{MONTH_NAMES[d.getMonth()]}</span>
@@ -699,7 +699,7 @@ export default function Index() {
                     {TIMES.map(t => (
                       <button key={t} onClick={() => setSelectedTime(t)}
                         className="py-2.5 rounded-xl text-sm font-semibold border-2 transition-all"
-                        style={{ borderColor: selectedTime === t ? "#0d9488" : "#f1f5f9", background: selectedTime === t ? "#0d9488" : "white", color: selectedTime === t ? "white" : "#0f172a" }}>
+                        style={{ borderColor: selectedTime === t ? "#E03A2F" : "#f1f5f9", background: selectedTime === t ? "#E03A2F" : "white", color: selectedTime === t ? "white" : "#1A1A1A" }}>
                         {t}
                       </button>
                     ))}
@@ -707,12 +707,12 @@ export default function Index() {
                   <div className="flex gap-3">
                     <button onClick={() => setBookingStep(1)}
                       className="flex-1 py-3.5 rounded-xl font-semibold border-2 transition-all"
-                      style={{ borderColor: "#e2e8f0", color: "#0f172a" }}>
+                      style={{ borderColor: "#e2e8f0", color: "#1A1A1A" }}>
                       ← Назад
                     </button>
                     <button onClick={() => selectedDate && selectedTime && setBookingStep(3)} disabled={!selectedDate || !selectedTime}
                       className="flex-1 py-3.5 rounded-xl font-semibold transition-all"
-                      style={{ background: selectedDate && selectedTime ? "#0d9488" : "#e2e8f0", color: selectedDate && selectedTime ? "white" : "#94a3b8", cursor: selectedDate && selectedTime ? "pointer" : "not-allowed" }}>
+                      style={{ background: selectedDate && selectedTime ? "#E03A2F" : "#e2e8f0", color: selectedDate && selectedTime ? "white" : "#94a3b8", cursor: selectedDate && selectedTime ? "pointer" : "not-allowed" }}>
                       Далее →
                     </button>
                   </div>
@@ -720,13 +720,13 @@ export default function Index() {
               ) : (
                 <div>
                   <p className="text-sm font-medium mb-4" style={{ color: "#64748b" }}>Ваши контакты</p>
-                  <div className="rounded-xl p-4 mb-5 space-y-1" style={{ background: "rgba(13,148,136,0.05)" }}>
+                  <div className="rounded-xl p-4 mb-5 space-y-1" style={{ background: "rgba(224,58,47,0.05)" }}>
                     <div className="flex items-center gap-2 text-sm">
-                      <Icon name="Sparkles" size={14} style={{ color: "#0d9488" }} />
-                      <span className="font-semibold" style={{ color: "#0f172a" }}>{selectedService}</span>
+                      <Icon name="Sparkles" size={14} style={{ color: "#E03A2F" }} />
+                      <span className="font-semibold" style={{ color: "#1A1A1A" }}>{selectedService}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm" style={{ color: "#64748b" }}>
-                      <Icon name="Calendar" size={14} style={{ color: "#0d9488" }} />
+                      <Icon name="Calendar" size={14} style={{ color: "#E03A2F" }} />
                       {selectedDate && new Date(selectedDate).toLocaleDateString("ru-RU", { weekday: "long", day: "numeric", month: "long" })} в {selectedTime}
                     </div>
                   </div>
@@ -734,28 +734,28 @@ export default function Index() {
                     <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Ваше имя *"
                       className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none bg-white"
                       style={{ border: "2px solid #e2e8f0" }}
-                      onFocus={e => (e.target.style.borderColor = "#0d9488")}
+                      onFocus={e => (e.target.style.borderColor = "#E03A2F")}
                       onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
                     <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="+7 (___) ___-__-__ *"
                       className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none bg-white"
                       style={{ border: "2px solid #e2e8f0" }}
-                      onFocus={e => (e.target.style.borderColor = "#0d9488")}
+                      onFocus={e => (e.target.style.borderColor = "#E03A2F")}
                       onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
                     <input type="text" placeholder="Марка и модель авто"
                       className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none bg-white"
                       style={{ border: "2px solid #e2e8f0" }}
-                      onFocus={e => (e.target.style.borderColor = "#0d9488")}
+                      onFocus={e => (e.target.style.borderColor = "#E03A2F")}
                       onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
                   </div>
                   <div className="flex gap-3">
                     <button onClick={() => setBookingStep(2)}
                       className="flex-1 py-3.5 rounded-xl font-semibold border-2 transition-all"
-                      style={{ borderColor: "#e2e8f0", color: "#0f172a" }}>
+                      style={{ borderColor: "#e2e8f0", color: "#1A1A1A" }}>
                       ← Назад
                     </button>
                     <button onClick={() => { if (name && phone) { setBookingDone(true); } }} disabled={!name || !phone}
                       className="flex-1 py-3.5 rounded-xl font-semibold transition-all"
-                      style={{ background: name && phone ? "#0d9488" : "#e2e8f0", color: name && phone ? "white" : "#94a3b8", cursor: name && phone ? "pointer" : "not-allowed" }}>
+                      style={{ background: name && phone ? "#E03A2F" : "#e2e8f0", color: name && phone ? "white" : "#94a3b8", cursor: name && phone ? "pointer" : "not-allowed" }}>
                       Записаться!
                     </button>
                   </div>
@@ -770,7 +770,7 @@ export default function Index() {
       <div className="fixed bottom-6 right-6 z-40">
         <button onClick={() => openBooking()}
           className="text-white font-semibold px-5 py-3 rounded-full shadow-2xl transition-all flex items-center gap-2 text-sm"
-          style={{ background: "#0d9488" }}>
+          style={{ background: "#E03A2F" }}>
           <Icon name="Calendar" size={16} />
           Записаться
         </button>
