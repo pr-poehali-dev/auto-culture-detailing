@@ -109,13 +109,13 @@ export default function Index() {
       {/* NAVBAR */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"}`}>
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-md flex items-center justify-center" style={{ background: "#E03A2F" }}>
-              <Icon name="Car" size={18} className="text-white" />
-            </div>
-            <span className="font-display text-xl font-bold tracking-wide" style={{ color: "#1A1A1A" }}>
-              АВТО<span style={{ color: "#E03A2F" }}>КУЛЬТУРА</span>
-            </span>
+          <a href="#home" className="flex items-center">
+            <img
+              src="https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/bucket/90584169-8225-4146-9379-82ee6498a578.png"
+              alt="Автокультура"
+              className="h-12 w-auto object-contain"
+              style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
+            />
           </a>
 
           <nav className="hidden lg:flex items-center gap-6">
@@ -565,11 +565,13 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-md flex items-center justify-center" style={{ background: "#E03A2F" }}>
-                  <Icon name="Car" size={18} className="text-white" />
-                </div>
-                <span className="font-display text-xl font-bold">АВТО<span style={{ color: "#E03A2F" }}>КУЛЬТУРА</span></span>
+              <div className="mb-4">
+                <img
+                  src="https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/bucket/90584169-8225-4146-9379-82ee6498a578.png"
+                  alt="Автокультура"
+                  className="h-14 w-auto object-contain"
+                  style={{ filter: "brightness(0) invert(1)" }}
+                />
               </div>
               <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
                 Профессиональный автодетейлинг. Возвращаем автомобилю заводской блеск.
