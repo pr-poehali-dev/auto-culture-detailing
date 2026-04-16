@@ -195,9 +195,9 @@ export default function Index() {
                 Профессиональный детейлинг
               </div>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-                БЛЕСК<br />
-                <span style={{ color: "#E03A2F" }}>ВАШЕГО</span><br />
-                АВТО
+                ВАШ АВТОМОБИЛЬ<br />
+                <span style={{ color: "#E03A2F" }}>ДОСТОИН</span><br />
+                ЛУЧШЕГО
               </h1>
               <p className="text-lg font-light leading-relaxed mb-8 max-w-md animate-fade-in-up" style={{ color: "rgba(255,255,255,0.6)", animationDelay: "0.2s" }}>
                 Возвращаем автомобилю заводской вид. Профессиональная химия, современное оборудование, гарантия результата.
