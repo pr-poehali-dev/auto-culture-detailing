@@ -114,7 +114,7 @@ export default function Index() {
               <Icon name="Car" size={18} className="text-white" />
             </div>
             <span className="font-display text-xl font-bold tracking-wide" style={{ color: "#0f172a" }}>
-              DETAIL<span style={{ color: "#0d9488" }}>PRO</span>
+              АВТО<span style={{ color: "#0d9488" }}>КУЛЬТУРА</span>
             </span>
           </a>
 
@@ -569,7 +569,7 @@ export default function Index() {
                 <div className="w-8 h-8 rounded-md flex items-center justify-center" style={{ background: "#0d9488" }}>
                   <Icon name="Car" size={18} className="text-white" />
                 </div>
-                <span className="font-display text-xl font-bold">DETAIL<span style={{ color: "#2dd4bf" }}>PRO</span></span>
+                <span className="font-display text-xl font-bold">АВТО<span style={{ color: "#2dd4bf" }}>КУЛЬТУРА</span></span>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
                 Профессиональный автодетейлинг. Возвращаем автомобилю заводской блеск.
@@ -593,7 +593,7 @@ export default function Index() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 pt-6" style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}>
-            <p className="text-sm" style={{ color: "rgba(255,255,255,0.3)" }}>© 2024 DetailPro. Все права защищены.</p>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.3)" }}>© 2024 Автокультура. Все права защищены.</p>
             <button onClick={() => openBooking()}
               className="text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-all"
               style={{ background: "#0d9488" }}>
