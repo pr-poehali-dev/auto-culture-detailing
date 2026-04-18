@@ -131,7 +131,7 @@ export default function PageSections({ onBooking }: SectionsProps) {
               </div>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
                 ВАШ АВТОМОБИЛЬ<br />
-                <span style={{ color: "#E03A2F" }}>ДОСТОИН</span><br />
+                <span style={{ color: "#E03A2F" }}>ДОСТОИН </span>
                 ЛУЧШЕГО
               </h1>
               <p className="text-lg font-light leading-relaxed mb-8 max-w-md animate-fade-in-up" style={{ color: "rgba(255,255,255,0.6)", animationDelay: "0.2s" }}>
@@ -241,7 +241,7 @@ export default function PageSections({ onBooking }: SectionsProps) {
                 Автокультура — профессиональная студия детейлинга в Красноярске. Работаем с автомобилями любого класса: от городских машин до премиальных авто.
               </p>
               <p className="leading-relaxed mb-8" style={{ color: "#64748b" }}>
-                Используем только сертифицированные профессиональные материалы ведущих мировых брендов. Каждый мастер проходит регулярную аттестацию.
+                Для нас детейлинг — это честная работа на результат, за который нам не стыдно. Приезжайте к нам и убедитесь в этом сами!
               </p>
               <div className="flex flex-wrap gap-3">
                 {["Сертифицированные мастера", "Проф. материалы", "Гарантия на работы", "Фотоотчёт"].map(tag => (
@@ -489,7 +489,7 @@ export default function PageSections({ onBooking }: SectionsProps) {
             <div>
               <h4 className="font-display text-sm font-bold uppercase tracking-wider mb-4" style={{ color: "rgba(255,255,255,0.4)" }}>Услуги</h4>
               <div className="space-y-2">
-                {SERVICES.slice(0, 4).map(s => (
+                {SERVICES.map(s => (
                   <div key={s.title} className="text-sm cursor-pointer transition-colors hover:text-red-400" style={{ color: "rgba(255,255,255,0.5)" }}>{s.title}</div>
                 ))}
               </div>

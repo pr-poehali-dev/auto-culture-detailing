@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
-import { NAV_LINKS, LOGO_URL, PHONE, PHONE_HREF } from "@/lib/detailing-data";
+import { NAV_LINKS, LOGO_URL, PHONE, PHONE_HREF, ADDRESS, TG_GROUP } from "@/lib/detailing-data";
 
 interface NavbarProps {
   onBooking: () => void;
@@ -17,8 +17,24 @@ export default function Navbar({ onBooking }: NavbarProps) {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"}`}>
-      <div className="container mx-auto px-4 flex items-center justify-between">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
+      {/* Верхняя строка — адрес и Telegram */}
+      <div className={`transition-all duration-300 ${scrolled ? "hidden" : "block"}`}
+        style={{ background: "rgba(0,0,0,0.35)", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+        <div className="container mx-auto px-4 py-1.5 flex items-center justify-between">
+          <div className="flex items-center gap-1.5 text-xs" style={{ color: "rgba(255,255,255,0.7)" }}>
+            <Icon name="MapPin" size={12} />
+            {ADDRESS}
+          </div>
+          <a href={TG_GROUP} target="_blank" rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs transition-colors hover:text-blue-300"
+            style={{ color: "rgba(255,255,255,0.7)" }}>
+            <Icon name="Send" size={12} />
+            Telegram-канал
+          </a>
+        </div>
+      </div>
+      <div className={`container mx-auto px-4 flex items-center justify-between ${scrolled ? "py-3" : "py-4"}`}>
         <a href="#home" className="flex items-center">
           <img
             src={LOGO_URL}
