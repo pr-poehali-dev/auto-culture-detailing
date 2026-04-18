@@ -55,8 +55,14 @@ def handler(event: dict, context) -> dict:
     }).encode()
 
     req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=10) as resp:
-        resp.read()
+    try:
+        with urllib.request.urlopen(req, timeout=10) as resp:
+            tg_response = resp.read().decode()
+            print(f"[TG OK] {tg_response}")
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode()
+        print(f"[TG ERROR] status={e.code} chat_id={chat_id!r} token_prefix={bot_token[:10]!r} response={error_body}")
+        return {"statusCode": 502, "headers": cors, "body": json.dumps({"error": "telegram error", "detail": error_body})}
 
     return {
         "statusCode": 200,
