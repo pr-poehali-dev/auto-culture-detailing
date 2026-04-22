@@ -165,7 +165,14 @@ export default function PageSections({ onBooking }: SectionsProps) {
 
             <div className="relative hidden lg:flex items-center justify-center animate-scale-in" style={{ animationDelay: "0.3s" }}>
               <div className="relative w-full max-w-lg">
-                <HeroVideo />
+                <div className="w-full h-80 rounded-3xl overflow-hidden shadow-2xl" style={{ border: "1px solid rgba(224,58,47,0.2)" }}>
+                  <img
+                    src="https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/files/156a7c05-921b-4d14-b9fe-96e23c93e5bb.jpg"
+                    alt="Профессиональный детейлинг"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 rounded-3xl" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 50%)" }} />
+                </div>
 
                 <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-3 shadow-2xl animate-float" style={{ animationDelay: "0.5s" }}>
                   <div className="flex items-center gap-2">
