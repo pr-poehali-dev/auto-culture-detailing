@@ -167,7 +167,7 @@ export default function PageSections({ onBooking }: SectionsProps) {
               <div className="relative w-full max-w-lg">
                 <div className="w-full h-80 rounded-3xl overflow-hidden shadow-2xl" style={{ border: "1px solid rgba(224,58,47,0.2)" }}>
                   <img
-                    src="https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/files/156a7c05-921b-4d14-b9fe-96e23c93e5bb.jpg"
+                    src="https://i.ibb.co/hxP4Myxb/IMG-9120.png"
                     alt="Профессиональный детейлинг"
                     className="w-full h-full object-cover"
                   />
@@ -181,7 +181,7 @@ export default function PageSections({ onBooking }: SectionsProps) {
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: "#1A1A1A" }}>Готово!</div>
-                      <div className="text-[10px]" style={{ color: "#64748b" }}>Lexus GX 460</div>
+                      <div className="text-[10px]" style={{ color: "#64748b" }}>JAC T9</div>
                     </div>
                   </div>
                 </div>
