@@ -164,25 +164,15 @@ export default function PageSections({ onBooking }: SectionsProps) {
 
             <div className="relative hidden lg:flex items-center justify-center animate-scale-in" style={{ animationDelay: "0.3s" }}>
               <div className="relative w-full max-w-lg">
-                <div className="w-full h-80 rounded-3xl border flex items-center justify-center overflow-hidden"
-                  style={{ background: "linear-gradient(135deg, rgba(224,58,47,0.3), rgba(224,58,47,0.05))", borderColor: "rgba(224,58,47,0.2)" }}>
-                  <div className="text-center">
-                    <div className="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-4 animate-float"
-                      style={{ background: "rgba(224,58,47,0.2)" }}>
-                      <Icon name="Car" size={64} style={{ color: "#E03A2F" }} />
-                    </div>
-                    <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>Портфолио работ</p>
-                  </div>
-                </div>
-
-                <div className="absolute -top-4 -right-4 bg-white rounded-xl p-3 shadow-2xl flex items-center gap-2 animate-float" style={{ animationDelay: "0.2s" }}>
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(74,74,74,0.1)" }}>
-                    <Icon name="Star" size={16} style={{ color: "#4A4A4A" }} />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold" style={{ color: "#1A1A1A" }}>4.9 / 5.0</div>
-                    <div className="text-[10px]" style={{ color: "#64748b" }}>500+ отзывов</div>
-                  </div>
+                <div className="w-full h-80 rounded-3xl border overflow-hidden"
+                  style={{ borderColor: "rgba(224,58,47,0.2)" }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/PB0hnkEMSH4?autoplay=1&mute=1&loop=1&playlist=PB0hnkEMSH4&controls=0&showinfo=0&rel=0&modestbranding=1"
+                    className="w-full h-full"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    style={{ border: "none" }}
+                  />
                 </div>
 
                 <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-3 shadow-2xl animate-float" style={{ animationDelay: "0.5s" }}>
@@ -192,7 +182,7 @@ export default function PageSections({ onBooking }: SectionsProps) {
                     </div>
                     <div>
                       <div className="text-xs font-bold" style={{ color: "#1A1A1A" }}>Готово!</div>
-                      <div className="text-[10px]" style={{ color: "#64748b" }}>BMW 5 Series</div>
+                      <div className="text-[10px]" style={{ color: "#64748b" }}>Lexus GX 460</div>
                     </div>
                   </div>
                 </div>
