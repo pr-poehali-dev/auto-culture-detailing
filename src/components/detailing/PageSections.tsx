@@ -308,17 +308,17 @@ export default function PageSections({ onBooking }: SectionsProps) {
             {PORTFOLIO_ITEMS.map((item, i) => (
               <AnimSection key={i}>
                 <div className="rounded-2xl overflow-hidden border card-hover" style={{ borderColor: "#f1f5f9" }}>
-                  <div className="grid grid-cols-2 h-48">
+                  <div className="grid grid-cols-2" style={{ height: item.photoBefore ? "380px" : "192px" }}>
                     <div className="flex items-center justify-center relative overflow-hidden" style={{ background: item.colorBefore ?? "#9ca3af" }}>
                       <div className="absolute top-3 left-3 text-white text-xs px-2 py-1 rounded font-medium z-10" style={{ background: "rgba(0,0,0,0.5)" }}>До</div>
                       {item.photoBefore
-                        ? <img src={item.photoBefore} alt="До" className="w-full h-full object-cover" />
+                        ? <img src={item.photoBefore} alt="До" className="w-full h-full object-contain" />
                         : <Icon name="Car" size={48} style={{ color: "rgba(255,255,255,0.4)" }} />}
                     </div>
                     <div className="flex items-center justify-center relative overflow-hidden" style={{ background: item.colorAfter ?? "#E03A2F" }}>
                       <div className="absolute top-3 right-3 text-xs px-2 py-1 rounded font-semibold z-10" style={{ background: "rgba(255,255,255,0.9)", color: "#1A1A1A" }}>После</div>
                       {item.photoAfter
-                        ? <img src={item.photoAfter} alt="После" className="w-full h-full object-cover" />
+                        ? <img src={item.photoAfter} alt="После" className="w-full h-full object-contain" />
                         : <Icon name="Sparkles" size={48} style={{ color: "rgba(255,255,255,0.6)" }} />}
                     </div>
                   </div>
