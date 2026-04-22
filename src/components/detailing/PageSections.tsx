@@ -101,9 +101,32 @@ function QuickForm() {
   );
 }
 
+function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  return (
+    <div className="fixed inset-0 z-[999] flex items-center justify-center p-4"
+      style={{ background: "rgba(0,0,0,0.9)" }}
+      onClick={onClose}>
+      <button className="absolute top-4 right-4 text-white p-2 rounded-full transition-all hover:bg-white/20"
+        onClick={onClose}>
+        <Icon name="X" size={28} />
+      </button>
+      <img src={src} alt="" className="max-w-full max-h-[90vh] rounded-xl object-contain shadow-2xl"
+        onClick={e => e.stopPropagation()} />
+    </div>
+  );
+}
+
 export default function PageSections({ onBooking }: SectionsProps) {
+  const [lightbox, setLightbox] = useState<string | null>(null);
   return (
     <>
+      {lightbox && <Lightbox src={lightbox} onClose={() => setLightbox(null)} />}
       {/* HERO */}
       <section id="home" className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "#1A1A1A" }}>
         <div className="absolute inset-0 overflow-hidden">
@@ -312,13 +335,15 @@ export default function PageSections({ onBooking }: SectionsProps) {
                     <div className="flex items-center justify-center relative overflow-hidden" style={{ background: item.colorBefore ?? "#9ca3af" }}>
                       <div className="absolute top-3 left-3 text-white text-xs px-2 py-1 rounded font-medium z-10" style={{ background: "rgba(0,0,0,0.5)" }}>До</div>
                       {item.photoBefore
-                        ? <img src={item.photoBefore} alt="До" className="w-full h-full object-cover" />
+                        ? <img src={item.photoBefore} alt="До" className="w-full h-full object-cover cursor-zoom-in transition-transform hover:scale-105"
+                            onClick={() => setLightbox(item.photoBefore!)} />
                         : <Icon name="Car" size={48} style={{ color: "rgba(255,255,255,0.4)" }} />}
                     </div>
                     <div className="flex items-center justify-center relative overflow-hidden" style={{ background: item.colorAfter ?? "#E03A2F" }}>
                       <div className="absolute top-3 right-3 text-xs px-2 py-1 rounded font-semibold z-10" style={{ background: "rgba(255,255,255,0.9)", color: "#1A1A1A" }}>После</div>
                       {item.photoAfter
-                        ? <img src={item.photoAfter} alt="После" className="w-full h-full object-cover" />
+                        ? <img src={item.photoAfter} alt="После" className="w-full h-full object-cover cursor-zoom-in transition-transform hover:scale-105"
+                            onClick={() => setLightbox(item.photoAfter!)} />
                         : <Icon name="Sparkles" size={48} style={{ color: "rgba(255,255,255,0.6)" }} />}
                     </div>
                   </div>
