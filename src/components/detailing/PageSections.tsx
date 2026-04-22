@@ -165,11 +165,11 @@ export default function PageSections({ onBooking }: SectionsProps) {
 
             <div className="relative hidden lg:flex items-center justify-center animate-scale-in" style={{ animationDelay: "0.3s" }}>
               <div className="relative w-full max-w-lg">
-                <div className="w-full h-80 rounded-3xl overflow-hidden shadow-2xl" style={{ border: "1px solid rgba(224,58,47,0.2)" }}>
+                <div className="w-full rounded-3xl overflow-hidden shadow-2xl" style={{ border: "1px solid rgba(224,58,47,0.2)", aspectRatio: "1/1" }}>
                   <img
                     src="https://i.ibb.co/hxP4Myxb/IMG-9120.png"
                     alt="Профессиональный детейлинг"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                   <div className="absolute inset-0 rounded-3xl" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 50%)" }} />
                 </div>
