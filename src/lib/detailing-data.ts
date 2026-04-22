@@ -19,7 +19,7 @@ export const SERVICES = [
 export const PORTFOLIO_ITEMS = [
   { car: "Lixiang L9", service: "Ремонт вмятин без покраски (PDR)", result: "Без следов", photoBefore: "https://i.ibb.co/mCz7zdsf/IMG-9166-1.jpg", photoAfter: "https://i.ibb.co/hRb2KqYr/IMG-9133-1.jpg" },
   { car: "Toyota Avensis", service: "Полировка + керамика", result: "Зеркальный блеск", photoBefore: "https://i.ibb.co/Kjqqy5gJ/IMG-9036.jpg", photoAfter: "https://i.ibb.co/GfpxN9vy/IMG-9059.jpg" },
-  { car: "Porsche Cayenne", service: "Комплексный детейлинг", result: "Как из салона", colorBefore: "#d1d5db", colorAfter: "#E03A2F" },
+  { car: "Porsche Cayenne", service: "Реставрация сколов и царапин на ЛКП", result: "Как новый", photoBefore: "https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/files/b8f15674-a495-4dd8-a98c-48f10e87dfa8.jpg", photoAfter: "https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/files/64cfa81a-2a6a-40c5-8a05-43ef9c9f5178.jpg" },
   { car: "Toyota Camry", service: "Химчистка + озон", result: "Полное обновление", colorBefore: "#4b5563", colorAfter: "#4A4A4A" },
 ];
 
