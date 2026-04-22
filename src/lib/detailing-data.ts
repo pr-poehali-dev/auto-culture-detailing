@@ -17,7 +17,7 @@ export const SERVICES = [
 ];
 
 export const PORTFOLIO_ITEMS = [
-  { car: "BMW 5 Series", service: "Полировка + керамика", result: "−95% царапин", colorBefore: "#9ca3af", colorAfter: "#E03A2F" },
+  { car: "Lixiang L9", service: "Ремонт вмятин без покраски (PDR)", result: "Без следов", photoBefore: "https://i.ibb.co/qYGxyjy0/1-VJv-Qnvd-BDDs-Xv-V-74-ID7j-Fzd3nt-Oik4-1z-VItv-Daawo-Nx0-Q-U3zz-Ykp5igs-RNt-B7-Rnzn-S9g-r-PSk-EKWx-WL.jpg", photoAfter: "https://i.ibb.co/d4PCYJhz/2.jpg" },
   { car: "Mercedes GLC", service: "PPF + тонировка", result: "Защита 5 лет", colorBefore: "#6b7280", colorAfter: "#4A4A4A" },
   { car: "Porsche Cayenne", service: "Комплексный детейлинг", result: "Как из салона", colorBefore: "#d1d5db", colorAfter: "#E03A2F" },
   { car: "Toyota Camry", service: "Химчистка + озон", result: "Полное обновление", colorBefore: "#4b5563", colorAfter: "#4A4A4A" },
