@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import Icon from "@/components/ui/icon";
+import HeroVideo from "@/components/detailing/HeroVideo";
 import { SERVICES, PORTFOLIO_ITEMS, STEPS, PROMOS, LOGO_URL, PHONE, PHONE_HREF, ADDRESS, WORKING_HOURS, TG_PERSONAL, TG_GROUP } from "@/lib/detailing-data";
 
 function useInView(threshold = 0.15) {
@@ -164,16 +165,7 @@ export default function PageSections({ onBooking }: SectionsProps) {
 
             <div className="relative hidden lg:flex items-center justify-center animate-scale-in" style={{ animationDelay: "0.3s" }}>
               <div className="relative w-full max-w-lg">
-                <div className="w-full h-80 rounded-3xl border overflow-hidden"
-                  style={{ borderColor: "rgba(224,58,47,0.2)" }}>
-                  <iframe
-                    src="https://www.youtube.com/embed/PB0hnkEMSH4?autoplay=1&mute=1&loop=1&playlist=PB0hnkEMSH4&controls=0&showinfo=0&rel=0&modestbranding=1"
-                    className="w-full h-full"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    style={{ border: "none" }}
-                  />
-                </div>
+                <HeroVideo />
 
                 <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-3 shadow-2xl animate-float" style={{ animationDelay: "0.5s" }}>
                   <div className="flex items-center gap-2">
