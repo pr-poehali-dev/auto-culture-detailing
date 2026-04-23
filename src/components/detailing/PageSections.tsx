@@ -331,22 +331,29 @@ export default function PageSections({ onBooking }: SectionsProps) {
             {PORTFOLIO_ITEMS.map((item, i) => (
               <AnimSection key={i}>
                 <div className="rounded-2xl overflow-hidden border card-hover" style={{ borderColor: "#f1f5f9" }}>
+                  {"photoSingle" in item && item.photoSingle ? (
+                    <div className="relative h-48 overflow-hidden">
+                      <img src={item.photoSingle} alt={item.car} className="w-full h-full object-cover cursor-zoom-in transition-transform hover:scale-105"
+                        onClick={() => setLightbox((item as { photoSingle: string }).photoSingle)} />
+                    </div>
+                  ) : (
                   <div className="grid grid-cols-2 h-48">
-                    <div className="flex items-center justify-center relative overflow-hidden" style={{ background: item.colorBefore ?? "#9ca3af" }}>
+                    <div className="flex items-center justify-center relative overflow-hidden" style={{ background: ("colorBefore" in item ? item.colorBefore : undefined) ?? "#9ca3af" }}>
                       <div className="absolute top-3 left-3 text-white text-xs px-2 py-1 rounded font-medium z-10" style={{ background: "rgba(0,0,0,0.5)" }}>До</div>
-                      {item.photoBefore
-                        ? <img src={item.photoBefore} alt="До" className="w-full h-full object-cover cursor-zoom-in transition-transform hover:scale-105"
-                            onClick={() => setLightbox(item.photoBefore!)} />
+                      {"photoBefore" in item && item.photoBefore
+                        ? <img src={item.photoBefore as string} alt="До" className="w-full h-full object-cover cursor-zoom-in transition-transform hover:scale-105"
+                            onClick={() => setLightbox(item.photoBefore as string)} />
                         : <Icon name="Car" size={48} style={{ color: "rgba(255,255,255,0.4)" }} />}
                     </div>
-                    <div className="flex items-center justify-center relative overflow-hidden" style={{ background: item.colorAfter ?? "#E03A2F" }}>
+                    <div className="flex items-center justify-center relative overflow-hidden" style={{ background: ("colorAfter" in item ? item.colorAfter : undefined) ?? "#E03A2F" }}>
                       <div className="absolute top-3 right-3 text-xs px-2 py-1 rounded font-semibold z-10" style={{ background: "rgba(255,255,255,0.9)", color: "#1A1A1A" }}>После</div>
-                      {item.photoAfter
-                        ? <img src={item.photoAfter} alt="После" className="w-full h-full object-cover cursor-zoom-in transition-transform hover:scale-105"
-                            onClick={() => setLightbox(item.photoAfter!)} />
+                      {"photoAfter" in item && item.photoAfter
+                        ? <img src={item.photoAfter as string} alt="После" className="w-full h-full object-cover cursor-zoom-in transition-transform hover:scale-105"
+                            onClick={() => setLightbox(item.photoAfter as string)} />
                         : <Icon name="Sparkles" size={48} style={{ color: "rgba(255,255,255,0.6)" }} />}
                     </div>
                   </div>
+                  )}
                   <div className="p-5 bg-white">
                     <div className="flex items-center justify-between">
                       <div>
