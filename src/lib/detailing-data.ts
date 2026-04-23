@@ -20,7 +20,7 @@ export const PORTFOLIO_ITEMS = [
   { car: "Lixiang L9", service: "Ремонт вмятин без покраски (PDR)", result: "Без следов", photoBefore: "https://i.ibb.co/mCz7zdsf/IMG-9166-1.jpg", photoAfter: "https://i.ibb.co/hRb2KqYr/IMG-9133-1.jpg" },
   { car: "Toyota Avensis", service: "Полировка + керамика", result: "Зеркальный блеск", photoBefore: "https://i.ibb.co/Kjqqy5gJ/IMG-9036.jpg", photoAfter: "https://i.ibb.co/GfpxN9vy/IMG-9059.jpg" },
   { car: "Porsche Cayenne", service: "Реставрация сколов и царапин на ЛКП", result: "Как новый", photoBefore: "https://i.ibb.co/pvkF4S8G/1-W4-EH6ra492gx-XXVl-PZc-Qk-GRL9-W65-S3-V-MUb1ard-D-2-Kx.jpg", photoAfter: "https://i.ibb.co/20ZXKLPf/1-Xq-DDTba48kn1-n-BE8y-AWs6-Ds8-E997-HBf9e-Hw-S3-Pk-k-N1-1.jpg" },
-  { car: "Toyota Verso", service: "Оклейка авто в бронепленку", result: "Под защитой", photoSingle: "https://i.ibb.co/xtDKm8tG/IMG-9469.jpg" },
+  { car: "Toyota Verso", service: "Оклейка авто в бронепленку", result: "Под защитой", photoSingle: "https://i.ibb.co/jZx8L9Hc/IMG-9469.jpg" },
 ];
 
 export const STEPS = [
