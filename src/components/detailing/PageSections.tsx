@@ -1,11 +1,8 @@
 import { useState } from "react";
-import HeroVideo from "@/components/detailing/HeroVideo";
 import { Lightbox } from "./sections/SectionHelpers";
 import HeroAbout from "./sections/HeroAbout";
 import ServicesPortfolio from "./sections/ServicesPortfolio";
 import ProcessContactsFooter from "./sections/ProcessContactsFooter";
-
-void HeroVideo;
 
 interface SectionsProps {
   onBooking: (service?: string) => void;
