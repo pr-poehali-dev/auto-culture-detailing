@@ -1,3 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+User-agent: Yandex
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+
 User-agent: Googlebot
 Allow: /
 
@@ -10,5 +18,5 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+Host: autoculture24.ru
+Sitemap: https://autoculture24.ru/sitemap.xml
