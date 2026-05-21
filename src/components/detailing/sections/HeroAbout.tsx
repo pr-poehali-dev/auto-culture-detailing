@@ -52,7 +52,7 @@ export default function HeroAbout({ onBooking }: Props) {
               </div>
 
               <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t animate-fade-in-up" style={{ borderColor: "rgba(255,255,255,0.1)", animationDelay: "0.4s" }}>
-                {[["500+", "Довольных клиентов"], ["7 лет", "На рынке"], ["100%", "Гарантия"]].map(([n, l]) => (
+                {[["2000+", "Довольных клиентов"], ["7 лет", "На рынке"], ["100%", "Гарантия"]].map(([n, l]) => (
                   <div key={n}>
                     <div className="font-display text-3xl font-bold mb-1" style={{ color: "#E03A2F" }}>{n}</div>
                     <div className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.5)" }}>{l}</div>
