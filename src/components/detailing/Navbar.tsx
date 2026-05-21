@@ -36,6 +36,12 @@ export default function Navbar({ onBooking }: NavbarProps) {
       </div>
       <div className={`container mx-auto px-4 flex items-center justify-between ${scrolled ? "py-3" : "py-4"}`}>
         <a href="#home" className="flex items-center">
+          <img
+            src={LOGO_URL}
+            alt="Автокультура"
+            className="h-12 w-auto object-contain"
+            style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
+          />
         </a>
 
         <nav className="hidden lg:flex items-center gap-6">

@@ -70,7 +70,7 @@ export default function BookingModal({
       <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto animate-scale-in">
         <div className="sticky top-0 bg-white px-6 py-4 flex items-center justify-between rounded-t-2xl z-10" style={{ borderBottom: "1px solid #f1f5f9" }}>
           <div className="flex items-center gap-3">
-            <img src={LOGO_URL} alt="Автокультура" className="h-8 w-auto object-contain" />
+
             <div>
               <h3 className="font-display text-xl font-bold" style={{ color: "#1A1A1A" }}>Онлайн-запись</h3>
               {!bookingDone && (
