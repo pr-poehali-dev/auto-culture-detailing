@@ -22,14 +22,7 @@ export default function HeroAbout({ onBooking }: Props) {
         <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="mb-6 animate-fade-in-up">
-                <img
-                  src={LOGO_URL}
-                  alt="Автокультура"
-                  className="h-20 w-auto object-contain"
-                  style={{ filter: "brightness(0) invert(1)" }}
-                />
-              </div>
+
               <div className="inline-flex items-center gap-2 border text-xs font-semibold px-3 py-1.5 rounded-full mb-6 animate-fade-in-up"
                 style={{ background: "rgba(224,58,47,0.2)", color: "#E03A2F", borderColor: "rgba(224,58,47,0.3)" }}>
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#E03A2F" }} />
