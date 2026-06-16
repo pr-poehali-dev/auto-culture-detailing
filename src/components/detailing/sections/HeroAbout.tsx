@@ -71,10 +71,10 @@ export default function HeroAbout({ onBooking }: Props) {
                   <div className="absolute inset-0 rounded-3xl" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.25) 0%, transparent 50%)" }} />
                 </div>
 
-                <div className="absolute -top-6 left-1/2 -translate-x-1/2 rounded-2xl px-6 py-3 shadow-2xl animate-float whitespace-nowrap" style={{ background: "#E03A2F", animationDelay: "0.5s" }}>
-                  <div className="flex items-center gap-3">
-                    <Icon name="Tag" size={20} style={{ color: "#fff" }} />
-                    <span className="text-base font-bold text-white">ЦЕНЫ НИЖЕ РЫНКА НА 20%</span>
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 rounded-xl px-5 py-2.5 shadow-2xl animate-float whitespace-nowrap" style={{ background: "#E03A2F", animationDelay: "0.5s" }}>
+                  <div className="flex items-center gap-2">
+                    <Icon name="Tag" size={16} style={{ color: "#fff" }} />
+                    <span className="text-sm font-bold text-white">ЦЕНЫ НИЖЕ РЫНКА НА 20%</span>
                   </div>
                 </div>
 
