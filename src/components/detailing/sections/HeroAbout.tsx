@@ -28,10 +28,10 @@ export default function HeroAbout({ onBooking }: Props) {
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#E03A2F" }} />
                 Профессиональный детейлинг
               </div>
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-                ВАШ АВТОМОБИЛЬ<br />
-                <span style={{ color: "#E03A2F" }}>ДОСТОИН </span>
-                ЛУЧШЕГО
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+                РЕМОНТ ВМЯТИН, РЕСТАВРАЦИЯ СКОЛОВ НА ЛКП,{" "}
+                <span style={{ color: "#E03A2F" }}>ПОЛИРОВКА, БРОНЕПЛЕНКИ</span>{" "}
+                В КРАСНОЯРСКЕ
               </h1>
               <p className="text-lg font-light leading-relaxed mb-8 max-w-md animate-fade-in-up" style={{ color: "rgba(255,255,255,0.6)", animationDelay: "0.2s" }}>
                 Возвращаем автомобилю первоначальный лоск. Профессиональный подход, современное оборудование и качественные материалы, гарантия результата.
