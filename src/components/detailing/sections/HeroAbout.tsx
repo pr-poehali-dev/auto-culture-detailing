@@ -1,5 +1,5 @@
 import Icon from "@/components/ui/icon";
-import { LOGO_URL } from "@/lib/detailing-data";
+import { LOGO_URL, TG_PERSONAL } from "@/lib/detailing-data";
 import { AnimSection } from "./SectionHelpers";
 
 interface Props {
@@ -115,6 +115,43 @@ export default function HeroAbout({ onBooking }: Props) {
                   <p className="text-sm leading-relaxed" style={{ color: "#64748b" }}>{desc}</p>
                 </div>
               ))}
+            </div>
+          </AnimSection>
+        </div>
+      </section>
+
+      {/* ОЦЕНКА ПО ФОТО */}
+      <section className="py-20" style={{ background: "#1A1A1A" }}>
+        <div className="container mx-auto px-4">
+          <AnimSection>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+                Оценим стоимость<br />
+                <span style={{ color: "#E03A2F" }}>ремонта по фото</span>
+              </h2>
+              <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
+                Отправьте фото дефекта в Telegram, WhatsApp или MAX — ответим в течение 15 минут
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                {[
+                  { icon: "Send", label: "Telegram", href: TG_PERSONAL, bg: "#229ED9" },
+                  { icon: "MessageCircle", label: "WhatsApp", href: "https://wa.me/79996823606", bg: "#25D366" },
+                  { icon: "Zap", label: "MAX", href: "https://ok.me/79996823606", bg: "#FF6B00" },
+                ].map(({ icon, label, href, bg }) => (
+                  <a key={label} href={href} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
+                    style={{ background: bg, minWidth: 160 }}>
+                    <Icon name={icon} size={18} />
+                    {label}
+                  </a>
+                ))}
+              </div>
+              <a href={TG_PERSONAL} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white font-bold px-10 py-4 rounded-xl text-lg transition-opacity hover:opacity-90"
+                style={{ background: "#E03A2F" }}>
+                <Icon name="ImagePlus" size={22} />
+                Отправить фото
+              </a>
             </div>
           </AnimSection>
         </div>
