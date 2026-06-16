@@ -133,17 +133,21 @@ export default function HeroAbout({ onBooking }: Props) {
                 Отправьте фото дефекта в Telegram или MAX — ответим в течение 15 минут
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                {[
-                  { icon: "Send", label: "Telegram", href: TG_PERSONAL, bg: "#229ED9" },
-                  { icon: "Zap", label: "MAX", href: "https://max.ru/+79996823606", bg: "#FF6B00" },
-                ].map(({ icon, label, href, bg }) => (
-                  <a key={label} href={href} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-                    style={{ background: bg, minWidth: 160 }}>
-                    <Icon name={icon} size={18} />
-                    {label}
-                  </a>
-                ))}
+                <a href={TG_PERSONAL} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
+                  style={{ background: "#229ED9", minWidth: 160 }}>
+                  <Icon name="Send" size={18} />
+                  Telegram
+                </a>
+                <a href="https://max.ru/+79996823606" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
+                  style={{ background: "#FF6B00", minWidth: 160 }}>
+                  <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="40" height="40" rx="10" fill="white"/>
+                    <text x="4" y="28" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="18" fill="#FF6B00">MAX</text>
+                  </svg>
+                  MAX
+                </a>
               </div>
               <a href={TG_PERSONAL} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white font-bold px-10 py-4 rounded-xl text-lg transition-opacity hover:opacity-90"
