@@ -36,7 +36,6 @@ export default function HeroAbout({ onBooking }: Props) {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl mb-4 mt-8 animate-fade-in-up"
                 style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)" }}>
                 <span className="text-sm font-light" style={{ color: "rgba(255,255,255,0.7)" }}>Скидка 10% на любую услугу для новых клиентов</span>
-                <Icon name="Tag" size={14} style={{ color: "#E03A2F" }} />
               </div>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
                 <button onClick={() => onBooking()}
