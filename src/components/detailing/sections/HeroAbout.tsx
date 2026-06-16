@@ -32,9 +32,7 @@ export default function HeroAbout({ onBooking }: Props) {
                 РЕМОНТ ВМЯТИН, РЕСТАВРАЦИЯ СКОЛОВ НА ЛКП, ПОЛИРОВКА, БРОНЕПЛЕНКИ{" "}
                 <span style={{ color: "#E03A2F" }}>В КРАСНОЯРСКЕ</span>
               </h1>
-              <p className="text-lg font-light leading-relaxed mb-6 max-w-md animate-fade-in-up" style={{ color: "rgba(255,255,255,0.6)", animationDelay: "0.2s" }}>
-                Возвращаем автомобилю первоначальный лоск. Профессиональный подход, современное оборудование и качественные материалы, гарантия результата.
-              </p>
+
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl mb-4 animate-fade-in-up"
                 style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)" }}>
                 <Icon name="Tag" size={14} style={{ color: "#E03A2F" }} />
