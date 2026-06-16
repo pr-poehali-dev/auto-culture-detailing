@@ -140,12 +140,8 @@ export default function HeroAbout({ onBooking }: Props) {
                   Telegram
                 </a>
                 <a href="https://max.ru/+79996823606" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-                  style={{ background: "#FF6B00", minWidth: 160 }}>
-                  <svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="40" height="40" rx="10" fill="white"/>
-                    <text x="4" y="28" fontFamily="Arial Black, Arial, sans-serif" fontWeight="900" fontSize="18" fill="#FF6B00">MAX</text>
-                  </svg>
+                  className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
+                  style={{ background: "#7B2FBE", minWidth: 160 }}>
                   MAX
                 </a>
               </div>
