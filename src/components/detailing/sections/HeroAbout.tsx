@@ -117,22 +117,25 @@ export default function HeroAbout({ onBooking }: Props) {
               <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(224,58,47,0.1)", color: "#E03A2F" }}>
                 О студии
               </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight mb-6" style={{ color: "#1A1A1A" }}>
-                ТВОЯ МАШИНА<br />
-                <span style={{ color: "#E03A2F" }}>МОЖЕТ БОЛЬШЕ.</span><br />
-                МЫ ПОКАЖЕМ.
+              <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight mb-8" style={{ color: "#1A1A1A" }}>
+                НАШИ<br />
+                <span style={{ color: "#E03A2F" }}>ПРЕИМУЩЕСТВА</span>
               </h2>
-              <p className="leading-relaxed mb-4" style={{ color: "#64748b" }}>
-                Автокультура — профессиональная студия детейлинга в Красноярске. Работаем с автомобилями любого класса: от городских машин до премиальных авто.
-              </p>
-              <p className="leading-relaxed mb-8" style={{ color: "#64748b" }}>
-                Для нас детейлинг — это честная работа на результат, за который нам не стыдно. Приезжайте к нам и убедитесь в этом сами!
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {["Сертифицированные мастера", "Проф. материалы", "Гарантия на работы", "Фотоотчёт"].map(tag => (
-                  <span key={tag} className="text-sm px-4 py-1.5 rounded-full font-medium" style={{ background: "#f1f5f9", color: "#475569" }}>
-                    {tag}
-                  </span>
+              <div className="space-y-6">
+                {[
+                  { icon: "Award", title: "Мастера с опытом от 5 лет", desc: "Видят поведение металла на любых марках машин, от тонкого металла свежих «китайцев» до жесткого металла немецкого премиума, что позволяет им ювелирно выпрямить вмятину любой сложности." },
+                  { icon: "Wrench", title: "Проф. инструмент", desc: "Более 100 видов специнструмента позволяют работать по разным технологиям, как снаружи детали, без разбора, так и через технологические отверстия. Как итог мы исправляем сложные вмятины на рёбрах, кантах и в труднодоступных местах." },
+                  { icon: "Sparkles", title: "Премиум материалы", desc: "Используем только профессиональную химию и премиальную керамику, за счёт чего достигаем идеального покрытия. Дешёвые составы, пасты, замазки не используем принципиально." },
+                ].map(({ icon, title, desc }) => (
+                  <div key={title} className="flex gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center mt-0.5" style={{ background: "rgba(224,58,47,0.1)" }}>
+                      <Icon name={icon} size={20} style={{ color: "#E03A2F" }} />
+                    </div>
+                    <div>
+                      <div className="font-semibold mb-1" style={{ color: "#1A1A1A" }}>{title}</div>
+                      <p className="text-sm leading-relaxed" style={{ color: "#64748b" }}>{desc}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </AnimSection>
