@@ -33,11 +33,10 @@ export default function HeroAbout({ onBooking }: Props) {
                 <span style={{ color: "#E03A2F" }}>В КРАСНОЯРСКЕ</span>
               </h1>
 
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl mb-4 animate-fade-in-up"
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl mb-4 mt-8 animate-fade-in-up"
                 style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)" }}>
-                <Icon name="Tag" size={14} style={{ color: "#E03A2F" }} />
-                <span className="text-sm font-semibold text-white">СЕЗОННАЯ АКЦИЯ:</span>
                 <span className="text-sm font-light" style={{ color: "rgba(255,255,255,0.7)" }}>Скидка 10% на любую услугу для новых клиентов</span>
+                <Icon name="Tag" size={14} style={{ color: "#E03A2F" }} />
               </div>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
                 <button onClick={() => onBooking()}
@@ -82,17 +81,7 @@ export default function HeroAbout({ onBooking }: Props) {
                   </div>
                 </div>
 
-                <div className="absolute -bottom-4 -left-4 bg-white rounded-xl p-3 shadow-2xl animate-float" style={{ animationDelay: "0.5s" }}>
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: "rgba(224,58,47,0.1)" }}>
-                      <Icon name="CheckCircle" size={16} style={{ color: "#E03A2F" }} />
-                    </div>
-                    <div>
-                      <div className="text-xs font-bold" style={{ color: "#1A1A1A" }}>Готово!</div>
-                      <div className="text-[10px]" style={{ color: "#64748b" }}>JAC T9</div>
-                    </div>
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
