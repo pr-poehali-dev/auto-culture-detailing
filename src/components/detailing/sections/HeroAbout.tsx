@@ -130,13 +130,12 @@ export default function HeroAbout({ onBooking }: Props) {
                 <span style={{ color: "#E03A2F" }}>ремонта по фото</span>
               </h2>
               <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Отправьте фото дефекта в Telegram, WhatsApp или MAX — ответим в течение 15 минут
+                Отправьте фото дефекта в Telegram или MAX — ответим в течение 15 минут
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 {[
                   { icon: "Send", label: "Telegram", href: TG_PERSONAL, bg: "#229ED9" },
-                  { icon: "MessageCircle", label: "WhatsApp", href: "https://wa.me/79996823606", bg: "#25D366" },
-                  { icon: "Zap", label: "MAX", href: "https://ok.me/79996823606", bg: "#FF6B00" },
+                  { icon: "Zap", label: "MAX", href: "https://max.ru/+79996823606", bg: "#FF6B00" },
                 ].map(({ icon, label, href, bg }) => (
                   <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                     className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
