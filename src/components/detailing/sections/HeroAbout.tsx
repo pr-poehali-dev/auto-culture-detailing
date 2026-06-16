@@ -139,18 +139,12 @@ export default function HeroAbout({ onBooking }: Props) {
                   <Icon name="Send" size={18} />
                   Telegram
                 </a>
-                <a href="https://max.ru/+79996823606" target="_blank" rel="noopener noreferrer"
+                <a href="https://linksharing.samsungcloud.com/wExeFcmRr8CH" target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ background: "#7B2FBE", minWidth: 160 }}>
                   MAX
                 </a>
               </div>
-              <a href={TG_PERSONAL} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white font-bold px-10 py-4 rounded-xl text-lg transition-opacity hover:opacity-90"
-                style={{ background: "#E03A2F" }}>
-                <Icon name="ImagePlus" size={22} />
-                Отправить фото
-              </a>
             </div>
           </AnimSection>
         </div>
