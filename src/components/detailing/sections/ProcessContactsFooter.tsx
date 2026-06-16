@@ -1,5 +1,5 @@
 import Icon from "@/components/ui/icon";
-import { SERVICES, STEPS, PROMOS, LOGO_URL, PHONE, PHONE_HREF, ADDRESS, WORKING_HOURS, TG_PERSONAL, TG_GROUP } from "@/lib/detailing-data";
+import { SERVICES, STEPS, LOGO_URL, PHONE, PHONE_HREF, ADDRESS, WORKING_HOURS, TG_PERSONAL, TG_GROUP } from "@/lib/detailing-data";
 import { AnimSection, QuickForm } from "./SectionHelpers";
 
 interface Props {
@@ -9,37 +9,6 @@ interface Props {
 export default function ProcessContactsFooter({ onBooking }: Props) {
   return (
     <>
-      {/* PROMO */}
-      <section id="promo" className="py-24" style={{ background: "#f8fafc" }}>
-        <div className="container mx-auto px-4">
-          <AnimSection className="text-center mb-14">
-            <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(74,74,74,0.1)", color: "#4A4A4A" }}>
-              Акции
-            </div>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold mb-4" style={{ color: "#1A1A1A" }}>
-              СПЕЦИАЛЬНЫЕ <span style={{ color: "#4A4A4A" }}>ПРЕДЛОЖЕНИЯ</span>
-            </h2>
-          </AnimSection>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {PROMOS.map((p) => (
-              <AnimSection key={p.title}>
-                <div className="rounded-2xl p-8 text-white h-full flex flex-col card-hover" style={{ background: p.bg }}>
-                  <div className="font-display text-5xl font-bold mb-4 opacity-90">{p.badge}</div>
-                  <h3 className="font-display text-2xl font-bold mb-3">{p.title}</h3>
-                  <p className="text-sm leading-relaxed flex-1 mb-6" style={{ color: "rgba(255,255,255,0.7)" }}>{p.desc}</p>
-                  <button onClick={() => onBooking()}
-                    className="border-2 text-white font-semibold py-3 rounded-xl transition-all text-sm w-full hover:bg-white/20"
-                    style={{ borderColor: "rgba(255,255,255,0.4)" }}>
-                    Воспользоваться
-                  </button>
-                </div>
-              </AnimSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* PROCESS */}
       <section id="process" className="py-24 relative overflow-hidden" style={{ background: "#1A1A1A" }}>
         <div className="absolute inset-0">
