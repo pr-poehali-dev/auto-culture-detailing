@@ -28,19 +28,19 @@ export default function HeroAbout({ onBooking }: Props) {
                 <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#E03A2F" }} />
                 Профессиональный детейлинг
               </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl mb-6 animate-fade-in-up"
+              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+                РЕМОНТ ВМЯТИН, РЕСТАВРАЦИЯ СКОЛОВ НА ЛКП, ПОЛИРОВКА, БРОНЕПЛЕНКИ{" "}
+                <span style={{ color: "#E03A2F" }}>В КРАСНОЯРСКЕ</span>
+              </h1>
+              <p className="text-lg font-light leading-relaxed mb-6 max-w-md animate-fade-in-up" style={{ color: "rgba(255,255,255,0.6)", animationDelay: "0.2s" }}>
+                Возвращаем автомобилю первоначальный лоск. Профессиональный подход, современное оборудование и качественные материалы, гарантия результата.
+              </p>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl mb-4 animate-fade-in-up"
                 style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)" }}>
                 <Icon name="Tag" size={14} style={{ color: "#E03A2F" }} />
                 <span className="text-sm font-semibold text-white">СЕЗОННАЯ АКЦИЯ:</span>
                 <span className="text-sm font-light" style={{ color: "rgba(255,255,255,0.7)" }}>Скидка 10% на любую услугу для новых клиентов</span>
               </div>
-              <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-                РЕМОНТ ВМЯТИН, РЕСТАВРАЦИЯ СКОЛОВ НА ЛКП, ПОЛИРОВКА, БРОНЕПЛЕНКИ{" "}
-                <span style={{ color: "#E03A2F" }}>В КРАСНОЯРСКЕ</span>
-              </h1>
-              <p className="text-lg font-light leading-relaxed mb-8 max-w-md animate-fade-in-up" style={{ color: "rgba(255,255,255,0.6)", animationDelay: "0.2s" }}>
-                Возвращаем автомобилю первоначальный лоск. Профессиональный подход, современное оборудование и качественные материалы, гарантия результата.
-              </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
                 <button onClick={() => onBooking()}
                   className="text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2 text-base"
