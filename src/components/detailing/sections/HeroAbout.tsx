@@ -92,49 +92,31 @@ export default function HeroAbout({ onBooking }: Props) {
       {/* ABOUT */}
       <section id="about" className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <AnimSection>
-              <div className="relative">
-                <div className="rounded-3xl p-10 h-80 flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(13,148,136,0.08), rgba(249,115,22,0.04))" }}>
-                  <div className="grid grid-cols-2 gap-4 w-full">
-                    {[
-                      { icon: "Award", label: "Опытные мастера", color: "#E03A2F" },
-                      { icon: "MapPin", label: "Студия в центре", color: "#4A4A4A" },
-                      { icon: "Wrench", label: "Проф. оборудование", color: "#E03A2F" },
-                      { icon: "ShieldCheck", label: "Гарантия на работы", color: "#4A4A4A" },
-                    ].map(({ icon, label, color }) => (
-                      <div key={label} className="bg-white rounded-2xl p-5 shadow-sm flex flex-col items-center gap-2 text-center">
-                        <Icon name={icon} size={28} style={{ color }} />
-                        <span className="text-sm font-semibold" style={{ color: "#1A1A1A" }}>{label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </AnimSection>
-
-            <AnimSection>
+          <AnimSection>
+            <div className="text-center mb-12">
               <div className="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-full mb-4" style={{ background: "rgba(224,58,47,0.1)", color: "#E03A2F" }}>
                 О студии
               </div>
-              <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight mb-8" style={{ color: "#1A1A1A" }}>
-                НАШИ<br />
-                <span style={{ color: "#E03A2F" }}>ПРЕИМУЩЕСТВА</span>
+              <h2 className="font-display text-4xl lg:text-5xl font-bold leading-tight" style={{ color: "#1A1A1A" }}>
+                НАШИ <span style={{ color: "#E03A2F" }}>ПРЕИМУЩЕСТВА</span>
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                {[
-                  { title: "Мастера с опытом от 5 лет", desc: "Видят поведение металла на любых марках машин, от тонкого металла свежих «китайцев» до жесткого металла немецкого премиума, что позволяет им ювелирно выпрямить вмятину любой сложности." },
-                  { title: "Проф. инструмент", desc: "Более 100 видов специнструмента позволяют работать по разным технологиям, как снаружи детали, без разбора, так и через технологические отверстия. Как итог мы исправляем сложные вмятины на рёбрах, кантах и в труднодоступных местах." },
-                  { title: "Премиум материалы", desc: "Используем только профессиональную химию и премиальную керамику, за счёт чего достигаем идеального покрытия. Дешёвые составы, пасты, замазки не используем принципиально." },
-                ].map(({ title, desc }) => (
-                  <div key={title} className="rounded-2xl p-5" style={{ background: "#f8fafc", borderTop: "3px solid #E03A2F" }}>
-                    <div className="font-semibold mb-2 text-sm" style={{ color: "#1A1A1A" }}>{title}</div>
-                    <p className="text-xs leading-relaxed" style={{ color: "#64748b" }}>{desc}</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { icon: "Award", title: "Мастера с опытом от 5 лет", desc: "Видят поведение металла на любых марках машин, от тонкого металла свежих «китайцев» до жесткого металла немецкого премиума, что позволяет им ювелирно выпрямить вмятину любой сложности." },
+                { icon: "Wrench", title: "Проф. инструмент", desc: "Более 100 видов специнструмента позволяют работать по разным технологиям, как снаружи детали, без разбора, так и через технологические отверстия. Как итог мы исправляем сложные вмятины на рёбрах, кантах и в труднодоступных местах." },
+                { icon: "Sparkles", title: "Премиум материалы", desc: "Используем только профессиональную химию и премиальную керамику, за счёт чего достигаем идеального покрытия. Дешёвые составы, пасты, замазки не используем принципиально." },
+              ].map(({ icon, title, desc }) => (
+                <div key={title} className="rounded-2xl p-7" style={{ background: "#f8fafc", borderTop: "3px solid #E03A2F" }}>
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(224,58,47,0.1)" }}>
+                    <Icon name={icon} size={22} style={{ color: "#E03A2F" }} />
                   </div>
-                ))}
-              </div>
-            </AnimSection>
-          </div>
+                  <div className="font-semibold mb-2" style={{ color: "#1A1A1A" }}>{title}</div>
+                  <p className="text-sm leading-relaxed" style={{ color: "#64748b" }}>{desc}</p>
+                </div>
+              ))}
+            </div>
+          </AnimSection>
         </div>
       </section>
     </>
