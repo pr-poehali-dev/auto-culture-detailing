@@ -26,10 +26,10 @@ export default function ProcessContactsFooter({ onBooking }: Props) {
             </h2>
           </AnimSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {STEPS.map((step) => (
-              <AnimSection key={step.num}>
-                <div className="rounded-2xl p-6 hover:bg-white/10 transition-all" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
+              <AnimSection key={step.num} className="flex">
+                <div className="flex flex-col rounded-2xl p-6 hover:bg-white/10 transition-all w-full" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>
                   <div className="font-display text-5xl font-bold mb-3 leading-none" style={{ color: "rgba(224,58,47,0.2)" }}>{step.num}</div>
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4" style={{ background: "rgba(224,58,47,0.2)" }}>
                     <Icon name={step.icon} size={20} style={{ color: "#E03A2F" }} />
