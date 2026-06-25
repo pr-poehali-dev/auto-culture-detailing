@@ -153,6 +153,7 @@ export default function HeroAbout({ onBooking }: Props) {
                   src="https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/bucket/0335264a-eb36-42eb-b2e0-00557fcd13f9.jpg"
                   alt="Оценка ремонта по фото в Telegram"
                   className="w-full drop-shadow-2xl"
+                  style={{ mixBlendMode: "multiply" }}
                 />
               </div>
             </div>
