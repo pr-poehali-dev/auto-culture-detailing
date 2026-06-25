@@ -123,26 +123,37 @@ export default function HeroAbout({ onBooking }: Props) {
       <section className="py-20" style={{ background: "#1A1A1A" }}>
         <div className="container mx-auto px-4">
           <AnimSection>
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-                Оценим стоимость<br />
-                <span style={{ color: "#E03A2F" }}>ремонта по фото</span>
-              </h2>
-              <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Отправьте фото дефекта в Telegram или MAX — ответим в течение 15 минут
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                <a href={TG_PERSONAL} target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-                  style={{ background: "#229ED9", minWidth: 160 }}>
-                  <Icon name="Send" size={18} />
-                  Telegram
-                </a>
-                <a href="https://max.ru/u/f9LHodD0cOKCDZiYPrfAzwKgdhgWjSUpfeHNOsVDtYXmjbeC9sAWi9JH2Xo" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
-                  style={{ background: "#7B2FBE", minWidth: 160 }}>
-                  MAX
-                </a>
+            <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+              {/* Левая часть */}
+              <div className="flex-1 text-center lg:text-left">
+                <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+                  Оценим стоимость<br />
+                  <span style={{ color: "#E03A2F" }}>ремонта по фото</span>
+                </h2>
+                <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.6)" }}>
+                  Отправьте фото дефекта в Telegram или MAX — ответим в течение 15 минут
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                  <a href={TG_PERSONAL} target="_blank" rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
+                    style={{ background: "#229ED9", minWidth: 160 }}>
+                    <Icon name="Send" size={18} />
+                    Telegram
+                  </a>
+                  <a href="https://max.ru/u/f9LHodD0cOKCDZiYPrfAzwKgdhgWjSUpfeHNOsVDtYXmjbeC9sAWi9JH2Xo" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90"
+                    style={{ background: "#7B2FBE", minWidth: 160 }}>
+                    MAX
+                  </a>
+                </div>
+              </div>
+              {/* Правая часть — фото */}
+              <div className="flex-shrink-0 w-72 lg:w-80">
+                <img
+                  src="https://cdn.poehali.dev/projects/b7be89c6-98d3-4f92-87a9-f9ec436b4c39/bucket/0335264a-eb36-42eb-b2e0-00557fcd13f9.jpg"
+                  alt="Оценка ремонта по фото в Telegram"
+                  className="w-full drop-shadow-2xl"
+                />
               </div>
             </div>
           </AnimSection>
