@@ -123,7 +123,7 @@ export default function HeroAbout({ onBooking }: Props) {
       <section className="py-20 overflow-hidden" style={{ background: "#1A1A1A" }}>
         <div className="container mx-auto px-4">
           <AnimSection>
-            <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-end gap-12">
+            <div className="max-w-4xl mx-auto flex flex-col lg:flex-row items-end gap-12 justify-center">
               {/* Левая часть */}
               <div className="flex-1 text-center lg:text-left">
                 <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
