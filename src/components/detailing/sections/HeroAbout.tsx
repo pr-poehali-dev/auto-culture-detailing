@@ -125,7 +125,7 @@ export default function HeroAbout({ onBooking }: Props) {
           <AnimSection>
             <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-end gap-12">
               {/* Левая часть */}
-              <div className="flex-1 text-center lg:text-left">
+              <div className="flex-1 text-center lg:text-left pb-12">
                 <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
                   Оценим стоимость<br />
                   <span style={{ color: "#E03A2F" }}>ремонта по фото</span>
