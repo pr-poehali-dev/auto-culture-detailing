@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { LOGO_URL, PHONE, PHONE_HREF, TG_GROUP, WORKING_HOURS } from "@/lib/detailing-data";
+import { reachGoal } from "@/lib/metrika";
 
 export default function Thanks() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    reachGoal("lead_submitted");
+  }, []);
 
   return (
     <div className="min-h-screen flex items-center justify-center font-body px-4" style={{ background: "#1A1A1A" }}>
