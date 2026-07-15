@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { SERVICES } from "@/lib/detailing-data";
 
@@ -28,12 +29,12 @@ export function AnimSection({ children, className = "" }: { children: React.Reac
 export const TG_URL = "https://functions.poehali.dev/271787e5-fcae-4b1f-9abd-a763fd8592b7";
 
 export function QuickForm() {
+  const navigate = useNavigate();
   const [qName, setQName] = useState("");
   const [qPhone, setQPhone] = useState("");
   const [qService, setQService] = useState("");
   const [qComment, setQComment] = useState("");
   const [qSending, setQSending] = useState(false);
-  const [qDone, setQDone] = useState(false);
 
   const handleSend = useCallback(async () => {
     if (!qName || !qPhone) return;
@@ -46,20 +47,8 @@ export function QuickForm() {
       });
     } catch (e) { console.error(e); }
     setQSending(false);
-    setQDone(true);
-  }, [qName, qPhone, qService, qComment]);
-
-  if (qDone) {
-    return (
-      <div className="text-center py-8">
-        <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(224,58,47,0.1)" }}>
-          <Icon name="CheckCircle" size={32} style={{ color: "#E03A2F" }} />
-        </div>
-        <h4 className="font-display text-xl font-bold mb-2" style={{ color: "#1A1A1A" }}>Заявка отправлена!</h4>
-        <p className="text-sm" style={{ color: "#64748b" }}>Перезвоним вам в течение 15 минут</p>
-      </div>
-    );
-  }
+    navigate("/thanks");
+  }, [qName, qPhone, qService, qComment, navigate]);
 
   return (
     <div className="space-y-4">

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { LOGO_URL } from "@/lib/detailing-data";
 
@@ -16,10 +17,11 @@ interface BookingModalProps {
 
 export default function BookingModal({
   bookingOpen, onClose,
-  bookingDone, setBookingDone,
+  setBookingDone,
   name, setName,
   phone, setPhone,
 }: BookingModalProps) {
+  const navigate = useNavigate();
   if (!bookingOpen) return null;
 
   const handleSubmit = async () => {
@@ -32,6 +34,8 @@ export default function BookingModal({
       });
     } catch (e) { console.error(e); }
     setBookingDone(true);
+    onClose();
+    navigate("/thanks");
   };
 
   return (
@@ -49,41 +53,26 @@ export default function BookingModal({
         </div>
 
         <div className="p-6">
-          {bookingDone ? (
-            <div className="text-center py-8">
-              <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(224,58,47,0.1)" }}>
-                <Icon name="CheckCircle" size={40} style={{ color: "#E03A2F" }} />
-              </div>
-              <h4 className="font-display text-2xl font-bold mb-2" style={{ color: "#1A1A1A" }}>Заявка отправлена!</h4>
-              <p className="text-sm mb-6" style={{ color: "#64748b" }}>Мы позвоним вам для подтверждения записи</p>
-              <button onClick={onClose}
-                className="text-white font-semibold px-8 py-3 rounded-xl transition-all"
-                style={{ background: "#E03A2F" }}>
-                Отлично!
-              </button>
+          <div>
+            <p className="text-sm mb-5" style={{ color: "#64748b" }}>Оставьте имя и номер телефона — мы свяжемся и запишем вас в удобное время</p>
+            <div className="space-y-3 mb-5">
+              <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Ваше имя *"
+                className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none bg-white"
+                style={{ border: "2px solid #e2e8f0" }}
+                onFocus={e => (e.target.style.borderColor = "#E03A2F")}
+                onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
+              <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="+7 (___) ___-__-__ *"
+                className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none bg-white"
+                style={{ border: "2px solid #e2e8f0" }}
+                onFocus={e => (e.target.style.borderColor = "#E03A2F")}
+                onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
             </div>
-          ) : (
-            <div>
-              <p className="text-sm mb-5" style={{ color: "#64748b" }}>Оставьте имя и номер телефона — мы свяжемся и запишем вас в удобное время</p>
-              <div className="space-y-3 mb-5">
-                <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Ваше имя *"
-                  className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none bg-white"
-                  style={{ border: "2px solid #e2e8f0" }}
-                  onFocus={e => (e.target.style.borderColor = "#E03A2F")}
-                  onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
-                <input type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="+7 (___) ___-__-__ *"
-                  className="w-full rounded-xl px-4 py-3 text-sm focus:outline-none bg-white"
-                  style={{ border: "2px solid #e2e8f0" }}
-                  onFocus={e => (e.target.style.borderColor = "#E03A2F")}
-                  onBlur={e => (e.target.style.borderColor = "#e2e8f0")} />
-              </div>
-              <button onClick={handleSubmit} disabled={!name || !phone}
-                className="w-full py-3.5 rounded-xl font-semibold transition-all text-white"
-                style={{ background: name && phone ? "#E03A2F" : "#e2e8f0", color: name && phone ? "white" : "#94a3b8", cursor: name && phone ? "pointer" : "not-allowed" }}>
-                Записаться
-              </button>
-            </div>
-          )}
+            <button onClick={handleSubmit} disabled={!name || !phone}
+              className="w-full py-3.5 rounded-xl font-semibold transition-all text-white"
+              style={{ background: name && phone ? "#E03A2F" : "#e2e8f0", color: name && phone ? "white" : "#94a3b8", cursor: name && phone ? "pointer" : "not-allowed" }}>
+              Записаться
+            </button>
+          </div>
         </div>
       </div>
     </div>
